@@ -27,6 +27,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Screenshots / temp images
+*.png
+!public/**/*.png
+
 # Environment files
 .env
 .env.local
