@@ -48,8 +48,14 @@ Thumbs.db
 # Secrets
 *.pem
 
-# AI agent/tooling artifacts
+# AI agent/tooling artifacts & dev guidelines
 AGENTS.md
 CLAUDE.md
+NEW-SESSION-PROMPT.md
+.instructions.md
+.prompt.md
+.agent.md
+SKILL.md
+*.guidelines.md
 .claude/
 .github/prompts/
