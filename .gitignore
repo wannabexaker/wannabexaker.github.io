@@ -59,3 +59,7 @@ SKILL.md
 *.guidelines.md
 .claude/
 .github/prompts/
+
+# Personal/bio documents
+Bio*.docx
+Bio*.pdf

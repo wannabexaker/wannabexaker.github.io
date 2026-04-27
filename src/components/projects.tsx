@@ -25,50 +25,51 @@ type Project = {
   url: string;
   year: string;
   image: string;
+  objectPosition?: string;
 };
 
 const fallbackProjects: Project[] = [
   {
     id: 1,
-    title: "Web App Security Hardening Pipeline",
-    description: "Authorized SQL injection assessment workflow with remediation and regression validation.",
-    url: "https://github.com/wannabexaker",
-    year: "2025",
-    image: "https://picsum.photos/seed/webapp-sqli-hardening/800/500",
+    title: "PMD — Project Manager Desktop",
+    description: "Local project management desktop app with colored task tracking and workflow automation.",
+    url: "https://github.com/wannabexaker/PMD",
+    year: "2026",
+    image: "/screenshots/pmd.png",
+    objectPosition: "65% center",
   },
   {
     id: 2,
-    title: "Wi-Fi Security Assessment Lab",
-    description: "Controlled wireless resilience testing with traffic analysis and post-assessment hardening.",
-    url: "https://github.com/wannabexaker",
-    year: "2024",
-    image: "https://picsum.photos/seed/wifi-security-assessment/800/500",
+    title: "SafestNotes",
+    description: "Encrypted local notes app for Android — zero-network, privacy-first note storage.",
+    url: "https://github.com/wannabexaker/SafestNotes",
+    year: "2026",
+    image: "/screenshots/safestnotes.jpg",
   },
   {
     id: 3,
-    title: "CCTV & Signal Center Integration",
-    description: "End-to-end installation, programming, and monitoring integration for security camera systems.",
-    url: "https://github.com/wannabexaker",
-    year: "2025",
-    image: "https://picsum.photos/seed/cctv-signal-center/800/500",
+    title: "sky-code",
+    description: "RF and wireless tooling project for spectrum analysis and signal processing workflows.",
+    url: "https://github.com/wannabexaker/sky-code",
+    year: "2026",
+    image: "/screenshots/sky-code.png",
   },
   {
     id: 4,
-    title: "Smart Home Energy Automation",
-    description: "IoT automation scenarios for metering, optimization, and energy-efficient smart spaces.",
-    url: "https://github.com/wannabexaker",
-    year: "2024",
-    image: "https://picsum.photos/seed/smart-home-energy-automation/800/500",
-  },
-  {
-    id: 5,
-    title: "Microwave Link Infrastructure",
-    description: "Planning and deployment of 20–80GHz P2P microwave links with azimuth alignment.",
-    url: "https://github.com/wannabexaker",
-    year: "2024",
-    image: "https://picsum.photos/seed/microwave-links/800/500",
+    title: "The Eye in the Sky",
+    description: "Aerial intelligence and monitoring system integrating UAV feeds with signal analysis.",
+    url: "https://github.com/wannabexaker/The_eye_in_the_sky",
+    year: "2026",
+    image: "/screenshots/The_Eye_in_the_Sky.png",
   },
 ];
+
+const repoScreenshots: Record<string, { image: string; objectPosition?: string }> = {
+  PMD: { image: "/screenshots/pmd.png", objectPosition: "65% center" },
+  SafestNotes: { image: "/screenshots/safestnotes.jpg" },
+  "sky-code": { image: "/screenshots/sky-code.png" },
+  "The_eye_in_the_sky": { image: "/screenshots/The_Eye_in_the_Sky.png" },
+};
 
 function mapReposToProjects(repos: GitHubRepo[]): Project[] {
   return repos.slice(0, 4).map((repo) => ({
@@ -78,7 +79,10 @@ function mapReposToProjects(repos: GitHubRepo[]): Project[] {
       repo.description ?? "Cybersecurity and software engineering project from wannabexaker.",
     url: repo.html_url,
     year: new Date(repo.created_at).getFullYear().toString(),
-    image: `https://picsum.photos/seed/${encodeURIComponent(repo.name)}/800/500`,
+    image:
+      repoScreenshots[repo.name]?.image ??
+      `https://opengraph.githubassets.com/1/wannabexaker/${encodeURIComponent(repo.name)}`,
+    objectPosition: repoScreenshots[repo.name]?.objectPosition,
   }));
 }
 
@@ -102,18 +106,29 @@ export function ProjectsSection() {
         }
 
         const repos = (await response.json()) as GitHubRepo[];
-        const selected = repos
-          .filter((repo) => !repo.fork)
-          .sort((a, b) => {
-            if (b.stargazers_count !== a.stargazers_count) {
-              return b.stargazers_count - a.stargazers_count;
-            }
+        const PINNED = ["PMD", "SafestNotes", "sky-code", "The_eye_in_the_sky"];
+        const byName = Object.fromEntries(repos.map((r) => [r.name, r]));
+        const fallbackByName = Object.fromEntries(
+          fallbackProjects.map((p) => [p.url.split("/").pop() ?? "", p])
+        );
 
-            return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
-          });
+        const nextProjects: Project[] = PINNED.map((name) => {
+          const repo = byName[name];
+          if (repo) {
+            return {
+              id: repo.id,
+              title: repo.name,
+              description: repo.description ?? "Cybersecurity and software engineering project from wannabexaker.",
+              url: repo.html_url,
+              year: new Date(repo.created_at).getFullYear().toString(),
+              image: repoScreenshots[repo.name]?.image ?? `https://opengraph.githubassets.com/1/wannabexaker/${encodeURIComponent(repo.name)}`,
+              objectPosition: repoScreenshots[repo.name]?.objectPosition,
+            };
+          }
+          return fallbackByName[name] ?? null;
+        }).filter(Boolean) as Project[];
 
-        if (!ignore && selected.length >= 1) {
-          const nextProjects = mapReposToProjects(selected);
+        if (!ignore && nextProjects.length >= 1) {
           setProjects(nextProjects);
           setActiveId(nextProjects[0]?.id ?? fallbackProjects[0]?.id ?? 1);
         }
@@ -189,6 +204,7 @@ export function ProjectsSection() {
               src={activeProject.image}
               alt={`${activeProject.title} preview image`}
               className="h-full w-full object-cover"
+              style={{ objectPosition: activeProject.objectPosition ?? "center" }}
               initial={reducedMotion ? false : { opacity: 0.6, scale: 1.02 }}
               animate={{
                 opacity: 1,

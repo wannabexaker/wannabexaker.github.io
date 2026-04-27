@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
@@ -16,8 +16,8 @@ const roles = [
 
 const socialLinks = [
   { href: "https://github.com/wannabexaker", label: "GitHub", icon: Code2 },
-  { href: "#contact", label: "Terminal", icon: Terminal },
-  { href: "#skills", label: "Shield", icon: Shield },
+  { href: "#contact", label: "Contact", icon: Terminal },
+  { href: "#skills", label: "Skills", icon: Shield },
 ];
 
 export function HeroBlock() {
@@ -93,18 +93,18 @@ export function HeroBlock() {
           I design, build, and secure it all — also I break things to understand them, then build them better.
         </p>
 
-        <motion.pre
+        <motion.div
           initial={reducedMotion ? false : { opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: reducedMotion ? 0 : 0.35, delay: reducedMotion ? 0 : 0.1 }}
           className="rounded-xl border border-primary/35 bg-black/70 px-6 py-5 text-left font-mono text-sm leading-6 text-primary shadow-[0_0_35px_rgba(0,255,136,0.15)]"
         >
-{`┌───────────────┐
-│        /o/             │
-│       IOANNIS          │
-│      wannabexaker      │
-└───────────────┘`}
-        </motion.pre>
+          <pre className="text-center leading-relaxed">{`+--------------------+
+|        /o/         |
+|   Ioannis Dimos    |
+|    wannabexaker    |
++--------------------+`}</pre>
+        </motion.div>
 
         <div className="flex flex-col items-center gap-3 sm:flex-row">
           <Button asChild size="lg" className="h-12 rounded-md bg-primary px-6 text-black hover:bg-primary/85">
@@ -132,6 +132,7 @@ export function HeroBlock() {
                 target={social.href.startsWith("http") ? "_blank" : undefined}
                 rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 aria-label={social.label}
+                title={social.label}
                 className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors duration-200 hover:border-primary/50 hover:text-primary"
               >
                 <Icon className="size-5" />
