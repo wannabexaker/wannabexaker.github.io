@@ -48,11 +48,11 @@ const fallbackProjects: Project[] = [
   },
   {
     id: 3,
-    title: "sky-code",
+    title: "skycode",
     description: "RF and wireless tooling project for spectrum analysis and signal processing workflows.",
-    url: "https://github.com/wannabexaker/sky-code",
+    url: "https://github.com/wannabexaker/skycode",
     year: "2026",
-    image: "/screenshots/sky-code.png",
+    image: "/screenshots/Sky-code.png",
   },
   {
     id: 4,
@@ -67,7 +67,7 @@ const fallbackProjects: Project[] = [
 const repoScreenshots: Record<string, { image: string; objectPosition?: string }> = {
   PMD: { image: "/screenshots/pmd.png", objectPosition: "65% center" },
   SafestNotes: { image: "/screenshots/safestnotes.jpg" },
-  "sky-code": { image: "/screenshots/sky-code.png" },
+  "skycode": { image: "/screenshots/Sky-code.png" },
   "The_eye_in_the_sky": { image: "/screenshots/The_Eye_in_the_Sky.png" },
 };
 
@@ -106,7 +106,7 @@ export function ProjectsSection() {
         }
 
         const repos = (await response.json()) as GitHubRepo[];
-        const PINNED = ["PMD", "SafestNotes", "sky-code", "The_eye_in_the_sky"];
+        const PINNED = ["PMD", "SafestNotes", "skycode", "The_eye_in_the_sky"];
         const byName = Object.fromEntries(repos.map((r) => [r.name, r]));
         const fallbackByName = Object.fromEntries(
           fallbackProjects.map((p) => [p.url.split("/").pop() ?? "", p])
