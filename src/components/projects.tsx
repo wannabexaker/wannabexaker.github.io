@@ -49,7 +49,7 @@ const fallbackProjects: Project[] = [
   {
     id: 3,
     title: "skycode",
-    description: "RF and wireless tooling project for spectrum analysis and signal processing workflows.",
+    description: "Offline-first AI coding agent — tool calling, file ops, git, multi-agent workflows, 100% local via Ollama.",
     url: "https://github.com/wannabexaker/skycode",
     year: "2026",
     image: "/screenshots/Sky-code.png",
@@ -58,7 +58,7 @@ const fallbackProjects: Project[] = [
     id: 4,
     title: "The Eye in the Sky",
     description: "Aerial intelligence and monitoring system integrating UAV feeds with signal analysis.",
-    url: "https://github.com/wannabexaker/The_eye_in_the_sky",
+    url: "https://github.com/wannabexaker/The_Eye_in_the_Sky",
     year: "2026",
     image: "/screenshots/The_Eye_in_the_Sky.png",
   },
@@ -68,7 +68,7 @@ const repoScreenshots: Record<string, { image: string; objectPosition?: string }
   PMD: { image: "/screenshots/pmd.png", objectPosition: "65% center" },
   SafestNotes: { image: "/screenshots/safestnotes.jpg" },
   "skycode": { image: "/screenshots/Sky-code.png" },
-  "The_eye_in_the_sky": { image: "/screenshots/The_Eye_in_the_Sky.png" },
+  "The_Eye_in_the_Sky": { image: "/screenshots/The_Eye_in_the_Sky.png" },
 };
 
 function mapReposToProjects(repos: GitHubRepo[]): Project[] {
@@ -106,7 +106,7 @@ export function ProjectsSection() {
         }
 
         const repos = (await response.json()) as GitHubRepo[];
-        const PINNED = ["PMD", "SafestNotes", "skycode", "The_eye_in_the_sky"];
+        const PINNED = ["PMD", "SafestNotes", "skycode", "The_Eye_in_the_Sky"];
         const byName = Object.fromEntries(repos.map((r) => [r.name, r]));
         const fallbackByName = Object.fromEntries(
           fallbackProjects.map((p) => [p.url.split("/").pop() ?? "", p])
@@ -114,18 +114,19 @@ export function ProjectsSection() {
 
         const nextProjects: Project[] = PINNED.map((name) => {
           const repo = byName[name];
+          const fallback = fallbackByName[name];
           if (repo) {
             return {
               id: repo.id,
               title: repo.name,
-              description: repo.description ?? "Cybersecurity and software engineering project from wannabexaker.",
+              description: fallback?.description ?? repo.description ?? "Cybersecurity and software engineering project from wannabexaker.",
               url: repo.html_url,
               year: new Date(repo.created_at).getFullYear().toString(),
               image: repoScreenshots[repo.name]?.image ?? `https://opengraph.githubassets.com/1/wannabexaker/${encodeURIComponent(repo.name)}`,
               objectPosition: repoScreenshots[repo.name]?.objectPosition,
             };
           }
-          return fallbackByName[name] ?? null;
+          return fallback ?? null;
         }).filter(Boolean) as Project[];
 
         if (!ignore && nextProjects.length >= 1) {

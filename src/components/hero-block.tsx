@@ -15,9 +15,9 @@ const roles = [
 ];
 
 const socialLinks = [
-  { href: "https://github.com/wannabexaker", label: "GitHub", icon: Code2 },
-  { href: "#contact", label: "Contact", icon: Terminal },
   { href: "#skills", label: "Skills", icon: Shield },
+  { href: "#projects", label: "Projects", icon: Code2 },
+  { href: "#contact", label: "Contact", icon: Terminal },
 ];
 
 export function HeroBlock() {

@@ -1,8 +1,40 @@
-import { Code2, Mail } from "lucide-react";
+"use client";
+
+import { useEffect, useState } from "react";
+import { Check, Code2, Copy, Mail } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
 
+const EMAIL = "dimos.is.dev@gmail.com";
+const COUNT_NAMESPACE = "wannabexaker-portfolio";
+const COUNT_KEY = "email-copy";
+
 export function ContactSection() {
+  const [copied, setCopied] = useState(false);
+  const [copyCount, setCopyCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch(`https://api.countapi.xyz/get/${COUNT_NAMESPACE}/${COUNT_KEY}`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (typeof data.value === "number") setCopyCount(data.value);
+      })
+      .catch(() => {});
+  }, []);
+
+  function handleCopy() {
+    navigator.clipboard.writeText(EMAIL).catch(() => {});
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+
+    fetch(`https://api.countapi.xyz/hit/${COUNT_NAMESPACE}/${COUNT_KEY}`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (typeof data.value === "number") setCopyCount(data.value);
+      })
+      .catch(() => {});
+  }
+
   return (
     <section id="contact" className="mx-auto w-full max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
       <h2 className="terminal-title text-2xl font-semibold tracking-tight sm:text-3xl">&gt; contact_</h2>
@@ -42,14 +74,28 @@ export function ContactSection() {
           </Card>
         </a>
 
-        <a href="mailto:dimos.is.dev@gmail.com" className="group">
+        <button onClick={handleCopy} className="group text-left">
           <Card className="h-full border-border/80 bg-card/80 transition-colors duration-200 group-hover:border-secondary/45 group-hover:bg-secondary/5">
-            <CardContent className="flex h-full min-h-28 items-center justify-center gap-3 p-6 font-mono text-foreground">
-              <Mail className="size-5 text-secondary" />
-              Email
+            <CardContent className="relative flex h-full min-h-28 flex-col items-center justify-center gap-2 p-6 font-mono text-foreground">
+              <div className="flex items-center gap-3">
+                {copied ? (
+                  <Check className="size-5 text-primary" />
+                ) : (
+                  <Mail className="size-5 text-secondary" />
+                )}
+                <span className={copied ? "text-primary" : ""}>
+                  {copied ? "Copied!" : "Email"}
+                </span>
+                {!copied && <Copy className="size-3 text-muted-foreground/40 transition-opacity group-hover:opacity-100" />}
+              </div>
+              {copyCount !== null && (
+                <span className="font-mono text-[10px] text-muted-foreground/40">
+                  {copyCount} {copyCount === 1 ? "copy" : "copies"}
+                </span>
+              )}
             </CardContent>
           </Card>
-        </a>
+        </button>
       </div>
 
       <p className="mt-6 text-sm text-muted-foreground">Based in Greece · Available for remote work</p>
