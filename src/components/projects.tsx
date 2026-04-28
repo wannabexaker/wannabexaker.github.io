@@ -57,7 +57,7 @@ const fallbackProjects: Project[] = [
   {
     id: 4,
     title: "The Eye in the Sky",
-    description: "Aerial intelligence and monitoring system integrating UAV feeds with signal analysis.",
+    description: "Full-stack slot simulation platform — React player shell, admin panel, math engine validation, and Node.js API.",
     url: "https://github.com/wannabexaker/The_Eye_in_the_Sky",
     year: "2026",
     image: "/screenshots/The_Eye_in_the_Sky.png",
