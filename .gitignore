@@ -63,3 +63,6 @@ SKILL.md
 # Personal/bio documents
 Bio*.docx
 Bio*.pdf
+
+# Local analysis cache (skill output — never commit)
+docs/
