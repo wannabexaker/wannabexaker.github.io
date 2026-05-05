@@ -62,6 +62,14 @@ const fallbackProjects: Project[] = [
     year: "2026",
     image: "/screenshots/The_Eye_in_the_Sky.png",
   },
+  {
+    id: 5,
+    title: "EM Spectrum",
+    description: "Interactive electromagnetic spectrum explorer — visualize RF bands, wireless technologies, modulation types, and frequency phenomena with zoom/pan canvas.",
+    url: "https://github.com/wannabexaker/EM_Spectrum",
+    year: "2026",
+    image: "https://opengraph.githubassets.com/1/wannabexaker/EM_Spectrum",
+  },
 ];
 
 const repoScreenshots: Record<string, { image: string; objectPosition?: string }> = {
@@ -69,6 +77,7 @@ const repoScreenshots: Record<string, { image: string; objectPosition?: string }
   SafestNotes: { image: "/screenshots/safestnotes.jpg" },
   "skycode": { image: "/screenshots/Sky-code.png" },
   "The_Eye_in_the_Sky": { image: "/screenshots/The_Eye_in_the_Sky.png" },
+  "EM_Spectrum": { image: "https://opengraph.githubassets.com/1/wannabexaker/EM_Spectrum" },
 };
 
 function mapReposToProjects(repos: GitHubRepo[]): Project[] {
@@ -106,7 +115,7 @@ export function ProjectsSection() {
         }
 
         const repos = (await response.json()) as GitHubRepo[];
-        const PINNED = ["PMD", "SafestNotes", "skycode", "The_Eye_in_the_Sky"];
+        const PINNED = ["PMD", "SafestNotes", "skycode", "The_Eye_in_the_Sky", "EM_Spectrum"];
         const byName = Object.fromEntries(repos.map((r) => [r.name, r]));
         const fallbackByName = Object.fromEntries(
           fallbackProjects.map((p) => [p.url.split("/").pop() ?? "", p])
@@ -162,6 +171,36 @@ export function ProjectsSection() {
       <h2 className="terminal-title text-2xl font-semibold tracking-tight sm:text-3xl">
         &gt; selected_projects_
       </h2>
+
+      {/* Featured: EM Spectrum */}
+      <a
+        href="/em-spectrum/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative mt-8 block overflow-hidden rounded-xl border border-primary/30 bg-gradient-to-br from-primary/5 via-black/60 to-secondary/5 p-6 transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_32px_rgba(0,255,136,0.12)]"
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,255,136,0.06),transparent_60%)] pointer-events-none" />
+        <div className="relative flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex-1">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-widest text-primary">
+                Featured
+              </span>
+              <span className="font-mono text-xs text-muted-foreground">2026</span>
+            </div>
+            <h3 className="mt-2 font-mono text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-200">
+              EM Spectrum Explorer
+            </h3>
+            <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              Interactive electromagnetic spectrum atlas — explore RF bands, wireless technologies, modulation types, and frequency phenomena with WebGL zoom/pan canvas. Educational &amp; professional modes.
+            </p>
+          </div>
+          <div className="flex shrink-0 items-center gap-2 font-mono text-sm text-primary opacity-70 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
+            Open live demo
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block"><path d="M6 3h7v7M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </div>
+        </div>
+      </a>
 
       <div className="relative mt-8 grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="space-y-4">

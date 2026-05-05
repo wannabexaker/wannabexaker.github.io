@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "sync:em-spectrum": "node scripts/sync-em-spectrum.mjs",
+    "build": "npm run sync:em-spectrum && next build",
     "start": "next start",
     "lint": "eslint"
   },

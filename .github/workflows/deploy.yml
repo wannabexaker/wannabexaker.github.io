@@ -18,9 +18,17 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      EM_SPECTRUM_PATH: ./em-spectrum-source/em-spectrum
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Checkout EM Spectrum source
+        uses: actions/checkout@v4
+        with:
+          repository: wannabexaker/EM_Spectrum
+          path: em-spectrum-source
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
