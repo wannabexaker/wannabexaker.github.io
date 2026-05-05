@@ -62,14 +62,6 @@ const fallbackProjects: Project[] = [
     year: "2026",
     image: "/screenshots/The_Eye_in_the_Sky.png",
   },
-  {
-    id: 5,
-    title: "EM Spectrum",
-    description: "Interactive electromagnetic spectrum explorer — visualize RF bands, wireless technologies, modulation types, and frequency phenomena with zoom/pan canvas.",
-    url: "https://github.com/wannabexaker/EM_Spectrum",
-    year: "2026",
-    image: "https://opengraph.githubassets.com/1/wannabexaker/EM_Spectrum",
-  },
 ];
 
 const repoScreenshots: Record<string, { image: string; objectPosition?: string }> = {
@@ -77,7 +69,6 @@ const repoScreenshots: Record<string, { image: string; objectPosition?: string }
   SafestNotes: { image: "/screenshots/safestnotes.jpg" },
   "skycode": { image: "/screenshots/Sky-code.png" },
   "The_Eye_in_the_Sky": { image: "/screenshots/The_Eye_in_the_Sky.png" },
-  "EM_Spectrum": { image: "https://opengraph.githubassets.com/1/wannabexaker/EM_Spectrum" },
 };
 
 function mapReposToProjects(repos: GitHubRepo[]): Project[] {
@@ -115,7 +106,7 @@ export function ProjectsSection() {
         }
 
         const repos = (await response.json()) as GitHubRepo[];
-        const PINNED = ["PMD", "SafestNotes", "skycode", "The_Eye_in_the_Sky", "EM_Spectrum"];
+        const PINNED = ["PMD", "SafestNotes", "skycode", "The_Eye_in_the_Sky"];
         const byName = Object.fromEntries(repos.map((r) => [r.name, r]));
         const fallbackByName = Object.fromEntries(
           fallbackProjects.map((p) => [p.url.split("/").pop() ?? "", p])
@@ -177,10 +168,12 @@ export function ProjectsSection() {
         href="/em-spectrum/"
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative mt-8 block overflow-hidden rounded-xl border border-primary/30 bg-gradient-to-br from-primary/5 via-black/60 to-secondary/5 p-6 transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_32px_rgba(0,255,136,0.12)]"
+        className="group relative mt-8 block overflow-hidden rounded-xl border border-primary/30 bg-gradient-to-br from-primary/7 via-black/70 to-secondary/8 p-6 transition-all duration-300 hover:border-primary/70 hover:shadow-[0_0_38px_rgba(0,255,136,0.16)]"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,255,136,0.06),transparent_60%)] pointer-events-none" />
-        <div className="relative flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,255,136,0.08),transparent_60%)] pointer-events-none" />
+        <div className="absolute inset-0 opacity-20 pointer-events-none [background:linear-gradient(transparent_49%,rgba(255,255,255,0.08)_50%,transparent_51%)] [background-size:100%_6px]" />
+
+        <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex-1">
             <div className="flex items-center gap-3">
               <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-widest text-primary">
@@ -194,10 +187,31 @@ export function ProjectsSection() {
             <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
               Interactive electromagnetic spectrum atlas — explore RF bands, wireless technologies, modulation types, and frequency phenomena with WebGL zoom/pan canvas. Educational &amp; professional modes.
             </p>
+            <div className="mt-4 flex items-center gap-2 font-mono text-sm text-primary opacity-80 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
+              Open live demo
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block"><path d="M6 3h7v7M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
           </div>
-          <div className="flex shrink-0 items-center gap-2 font-mono text-sm text-primary opacity-70 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
-            Open live demo
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block"><path d="M6 3h7v7M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+
+          <div className="relative w-full max-w-sm shrink-0 overflow-hidden rounded-lg border border-secondary/35 bg-black/75 p-3 shadow-[0_0_24px_rgba(14,165,233,0.12)]">
+            <div className="mb-2 flex items-center gap-1.5">
+              <span className="h-2 w-2 rounded-full bg-red-400/80" />
+              <span className="h-2 w-2 rounded-full bg-yellow-400/80" />
+              <span className="h-2 w-2 rounded-full bg-green-400/80" />
+              <span className="ml-2 font-mono text-[10px] uppercase tracking-wide text-secondary/80">spectrum.live</span>
+            </div>
+            <div className="relative h-24 overflow-hidden rounded border border-white/10 bg-black/70">
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,#1e40af_0%,#0ea5e9_18%,#22d3ee_30%,#22c55e_46%,#eab308_61%,#f97316_76%,#ef4444_92%,#7f1d1d_100%)] opacity-80" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.45),transparent_24%)] mix-blend-screen" />
+              <div className="absolute top-0 bottom-0 w-[2px] bg-white/80 shadow-[0_0_12px_rgba(255,255,255,0.8)] left-[62%] group-hover:left-[76%] transition-all duration-500" />
+            </div>
+            <div className="mt-2 flex items-center justify-between font-mono text-[9px] uppercase tracking-wider text-muted-foreground">
+              <span>1 Hz</span>
+              <span>10^6</span>
+              <span>10^12</span>
+              <span>10^18</span>
+              <span>10^26 Hz</span>
+            </div>
           </div>
         </div>
       </a>
