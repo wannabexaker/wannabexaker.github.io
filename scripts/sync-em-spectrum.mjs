@@ -61,3 +61,10 @@ fs.rmSync(outputPath, { recursive: true, force: true });
 copyRecursive(sourceOut, outputPath);
 
 console.log(`[sync-em-spectrum] Synced build into ${outputPath}`);
+
+// Clean up source if it lives inside our workspace (CI checkout)
+const relative = path.relative(portfolioRoot, sourcePath);
+if (relative && !relative.startsWith("..") && !path.isAbsolute(relative)) {
+  fs.rmSync(sourcePath, { recursive: true, force: true });
+  console.log(`[sync-em-spectrum] Cleaned up source checkout at ${sourcePath}`);
+}
