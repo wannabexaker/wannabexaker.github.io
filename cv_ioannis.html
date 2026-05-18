@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ioannis Dimos · CV</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    font-size: 11pt;
+    color: #1a1a1a;
+    background: #fff;
+    line-height: 1.5;
+  }
+
+  .page {
+    width: 210mm;
+    margin: 0 auto;
+    background: #fff;
+  }
+
+  /* HEADER */
+  .header {
+    padding: 28px 36px 22px;
+    border-bottom: 1.5px solid #1a1a1a;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .accent-bar {
+    width: 28px;
+    height: 3px;
+    background: #1a1a1a;
+    border-radius: 2px;
+    margin-bottom: 8px;
+  }
+
+  .name {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 20pt;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    color: #1a1a1a;
+  }
+
+  .tagline {
+    font-size: 9pt;
+    color: #555;
+    margin-top: 5px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+
+  .contact-item {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 8.5pt;
+    color: #444;
+  }
+
+  /* BODY GRID */
+  .body {
+    display: grid;
+    grid-template-columns: 175px 1fr;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    padding: 22px 18px;
+    border-right: 0.75px solid #ddd;
+    background: #f8f8f7;
+  }
+
+  .s-label {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 7pt;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 8px;
+    margin-top: 14px;
+    padding-bottom: 3px;
+    border-bottom: 0.5px solid #e0e0e0;
+  }
+
+  .s-label:first-child { margin-top: 0; }
+
+  .skill-group {
+    font-size: 8pt;
+    font-weight: 500;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .skill-group:first-of-type { margin-top: 0; }
+
+  .skill-item {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 8pt;
+    color: #1a1a1a;
+    display: block;
+    padding: 2px 0;
+  }
+
+  .cert-item { margin-bottom: 7px; }
+  .cert-name { font-size: 8.5pt; font-weight: 500; color: #1a1a1a; line-height: 1.4; }
+  .cert-org {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 7.5pt;
+    color: #888;
+    margin-top: 1px;
+  }
+
+  .lang-item { display: flex; justify-content: space-between; margin-bottom: 5px; }
+  .lang-name { font-size: 8.5pt; color: #1a1a1a; }
+  .lang-level {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 7.5pt;
+    color: #888;
+  }
+
+  /* MAIN */
+  .main {
+    padding: 22px 28px;
+  }
+
+  .m-label {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 7pt;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 8px;
+    margin-top: 14px;
+    padding-bottom: 3px;
+    border-bottom: 0.5px solid #e0e0e0;
+  }
+
+  .m-label:first-child { margin-top: 0; }
+
+  .summary {
+    font-size: 9.5pt;
+    color: #444;
+    line-height: 1.65;
+    margin-bottom: 4px;
+  }
+
+  .job { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 0.5px solid #eee; }
+  .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .job-header { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin-bottom: 3px; }
+  .job-title { font-size: 10pt; font-weight: 500; color: #1a1a1a; }
+  .job-company { font-size: 9pt; color: #555; margin-top: 1px; }
+  .job-period {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 7.5pt;
+    color: #999;
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+
+  .job-points { list-style: none; padding: 0; margin-top: 7px; display: flex; flex-direction: column; gap: 3px; }
+  .job-points li {
+    font-size: 9pt;
+    color: #444;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .job-points li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #999;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10pt;
+    font-weight: 500;
+  }
+
+  .edu-item { margin-bottom: 10px; }
+  .edu-degree { font-size: 9.5pt; font-weight: 500; color: #1a1a1a; }
+  .edu-school { font-size: 8.5pt; color: #555; margin-top: 1px; }
+  .edu-year {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 7.5pt;
+    color: #999;
+    margin-top: 1px;
+  }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { width: 100%; min-height: 100vh; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div>
+      <div class="accent-bar"></div>
+      <div class="name">Ioannis Dimos</div>
+      <div class="tagline">Network engineer, full-stack developer, RF and IoT systems</div>
+    </div>
+    <div class="contacts">
+      <span class="contact-item">dimos.is.dev@gmail.com</span>
+      <span class="contact-item">+30 698 919 7219</span>
+      <span class="contact-item">Athens, Greece</span>
+      <span class="contact-item">linkedin.com/in/jiannisnw</span>
+      <span class="contact-item">github.com/wannabexaker</span>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="sidebar">
+
+      <div class="s-label">Networking</div>
+      <span class="skill-item">Routing &amp; Switching</span>
+      <span class="skill-item">OSPF · BGP · EIGRP · STP</span>
+      <span class="skill-item">VLANs · 802.1Q trunking</span>
+      <span class="skill-item">TCP/IP · IPv4/IPv6 · subnetting</span>
+      <span class="skill-item">Firewall (MikroTik, pfSense, FortiGate)</span>
+      <span class="skill-item">VPN (IPsec, WireGuard, OpenVPN)</span>
+      <span class="skill-item">MPLS · QoS · NAT</span>
+      <span class="skill-item">WPA2/WPA3 Enterprise · 802.1X</span>
+      <span class="skill-item">Wireshark · packet analysis</span>
+      <span class="skill-item">Network automation (Python, basics)</span>
+      <span class="skill-item">Cloud networking (AWS / Azure, basics)</span>
+      <span class="skill-item">MikroTik RouterOS</span>
+
+      <div class="s-label">Security</div>
+      <span class="skill-item">Network &amp; firewall hardening</span>
+      <span class="skill-item">SIEM · IDS/IPS · Fail2ban</span>
+      <span class="skill-item">OWASP Top 10 · web app security</span>
+      <span class="skill-item">Burp Suite · OWASP ZAP</span>
+      <span class="skill-item">Metasploit · Nmap · Nessus</span>
+      <span class="skill-item">SQL injection · MITM (lab)</span>
+      <span class="skill-item">Wi-Fi auditing (Aircrack-ng)</span>
+      <span class="skill-item">Password attacks · Hashcat · Crunch</span>
+      <span class="skill-item">Kali · ParrotOS</span>
+      <span class="skill-item">MITRE ATT&amp;CK (learning)</span>
+
+      <div class="s-label">RF &amp; Wireless</div>
+      <span class="skill-item">Wi-Fi (a/b/g/n/ac/ax)</span>
+      <span class="skill-item">LoRa · wMBUS (IoT telemetry)</span>
+      <span class="skill-item">Microwave P2P links</span>
+      <span class="skill-item">Antenna alignment · site surveys</span>
+
+      <div class="s-label">Dev &amp; Systems</div>
+      <span class="skill-item">Linux · Windows · Bash</span>
+      <span class="skill-item">Python · PowerShell</span>
+      <span class="skill-item">TypeScript · React · Next.js</span>
+      <span class="skill-item">C# · .NET · NestJS · Vue.js</span>
+      <span class="skill-item">PostgreSQL · MSSQL</span>
+      <span class="skill-item">Docker · Proxmox</span>
+      <span class="skill-item">RPi · Arduino · ESP32</span>
+
+      <div class="s-label">Field</div>
+      <span class="skill-item">Fiber splicing / PON</span>
+      <span class="skill-item">OTDR · CCTV integration</span>
+      <span class="skill-item">Photovoltaic systems</span>
+      <span class="skill-item">GIS / AutoCAD / Site surveys</span>
+
+      <div class="s-label">Languages</div>
+      <div class="lang-item">
+        <span class="lang-name">Greek</span>
+        <span class="lang-level">Native</span>
+      </div>
+      <div class="lang-item">
+        <span class="lang-name">English</span>
+        <span class="lang-level">C2</span>
+      </div>
+
+    </div>
+
+    <div class="main">
+
+      <div class="m-label">Profile</div>
+      <p class="summary">
+        I work across networking, RF, embedded systems and full-stack development. Engineer first, with a security mindset that I keep building on. After 20 years of freelance work in the field, I now write code at PeopleCert and spend my off hours in a home lab breaking and rebuilding networks to understand them better.
+      </p>
+
+      <div class="m-label">Experience</div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="job-title">Junior Software Developer</div>
+            <div class="job-company">PeopleCert</div>
+          </div>
+          <div class="job-period">2025 – present</div>
+        </div>
+        <ul class="job-points">
+          <li>Building features across the stack in C# / .NET, JavaScript, Vue.js and PostgreSQL.</li>
+          <li>Joined after graduating from the company's in-house fullstack bootcamp.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="job-title">Field Technician, RF &amp; Fiber</div>
+            <div class="job-company">Solify</div>
+          </div>
+          <div class="job-period">02/2021 – 11/2023</div>
+        </div>
+        <ul class="job-points">
+          <li>Installed microwave P2P links, fiber (cat. B and C) and PV systems on customer sites.</li>
+          <li>Ran site surveys and picked the right hardware for the RF coverage we needed.</li>
+          <li>Kept installations on schedule and on the safety side of things.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="job-title">IoT &amp; AMR Operator</div>
+            <div class="job-company">Melcer</div>
+          </div>
+          <div class="job-period">06/2021 – 01/2023</div>
+        </div>
+        <ul class="job-points">
+          <li>Ran a smart water metering network on LoRa and wMBUS telemetry.</li>
+          <li>Worked on R&amp;D for the team, finding spots where we could automate manual work.</li>
+          <li>Handled project delivery from risk assessment to reporting back to the stakeholders.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="job-title">IT Technician</div>
+            <div class="job-company">Alman Hellas</div>
+          </div>
+          <div class="job-period">09/2017 – 01/2018</div>
+        </div>
+        <ul class="job-points">
+          <li>Diagnosed and repaired faulty hardware, kept the warehouse running.</li>
+          <li>Logged system status and helped the lead technician keep things stable.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <div class="job-title">Freelance IT Consultant</div>
+            <div class="job-company">Self-employed</div>
+          </div>
+          <div class="job-period">2004 – present</div>
+        </div>
+        <ul class="job-points">
+          <li>20 years of work for small businesses: networking, wireless setups, web apps, IoT.</li>
+          <li>Clients in retail, hospitality and manufacturing, both remote and on-site around Greece.</li>
+          <li>These days I focus on home lab security research and open-source side projects.</li>
+        </ul>
+      </div>
+
+      <div class="m-label">Portfolio</div>
+      <p class="summary" style="margin-bottom: 4px;">
+        Side projects, write-ups and open-source work live at <strong>wannabexaker.github.io</strong>.
+      </p>
+
+      <div class="m-label">Education</div>
+      <div class="edu-item">
+        <div class="edu-degree">Fullstack Developer Bootcamp</div>
+        <div class="edu-school">PeopleCert &nbsp;·&nbsp; C#, JavaScript, Vue.js, PostgreSQL, SSMS</div>
+        <div class="edu-year">2025</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Network &amp; Telecom Technician</div>
+        <div class="edu-school">IEK Omiros</div>
+        <div class="edu-year">2023</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Web Design &amp; Applications</div>
+        <div class="edu-school">Techniki Ekpaideftiki</div>
+        <div class="edu-year">2018</div>
+      </div>
+      <div class="edu-item" style="margin-bottom:0;">
+        <div class="edu-degree">IT Networks &amp; Computer Applications</div>
+        <div class="edu-school">EPAL</div>
+        <div class="edu-year">2012</div>
+      </div>
+
+      <div class="m-label">Certifications</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px;">
+        <div class="cert-item" style="margin-bottom: 0;">
+          <div class="cert-name">PRINCE2&reg; 7 Foundation</div>
+          <div class="cert-org">PeopleCert &middot; 2026</div>
+        </div>
+        <div class="cert-item" style="margin-bottom: 0;">
+          <div class="cert-name">C# Foundation</div>
+          <div class="cert-org">DevOps Institute &middot; 2025</div>
+        </div>
+        <div class="cert-item" style="margin-bottom: 0;">
+          <div class="cert-name">UAS Pilot, Level 1 &amp; 2</div>
+          <div class="cert-org">Geosense / HCAA &middot; 2022</div>
+        </div>
+        <div class="cert-item" style="margin-bottom: 0;">
+          <div class="cert-name">Geographic Information Systems</div>
+          <div class="cert-org">Easy Computer &middot; 2022</div>
+        </div>
+        <div class="cert-item" style="margin-bottom: 0;">
+          <div class="cert-name">Pump Systems Operation</div>
+          <div class="cert-org">Wilo Hellas &middot; 2022</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

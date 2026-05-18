@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Check, Code2, Copy, Mail } from "lucide-react";
+import { Check, Code2, Copy, FileDown, Mail } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -43,7 +43,7 @@ export function ContactSection() {
         freelance dev work, and interesting problems — remote or on-site in Greece.
       </p>
 
-      <div className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-3">
+      <div className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <a
           href="https://github.com/wannabexaker"
           target="_blank"
@@ -96,6 +96,15 @@ export function ContactSection() {
             </CardContent>
           </Card>
         </button>
+
+        <a href="/cv_ioannis_dimos.pdf" download="cv_ioannis_dimos.pdf" className="group">
+          <Card className="h-full border-border/80 bg-card/80 transition-colors duration-200 group-hover:border-primary/45 group-hover:bg-primary/5">
+            <CardContent className="flex h-full min-h-28 items-center justify-center gap-3 p-6 font-mono text-foreground">
+              <FileDown className="size-5 text-primary" />
+              Resume
+            </CardContent>
+          </Card>
+        </a>
       </div>
 
       <p className="mt-6 text-sm text-muted-foreground">Based in Greece · Available for remote work</p>
