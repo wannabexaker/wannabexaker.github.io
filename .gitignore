@@ -15,6 +15,7 @@ node_modules/
 out/
 build/
 public/em-spectrum/
+public/mcq-trainer/
 
 # Coverage
 coverage/
