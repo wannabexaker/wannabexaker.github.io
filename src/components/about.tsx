@@ -9,7 +9,7 @@ export function AboutSection() {
         <Card className="border-primary/20 bg-card/80">
           <CardContent className="p-6 sm:p-8">
             <p className="max-w-prose text-base leading-8 text-foreground/90 sm:text-lg">
-              I&apos;m a network engineer and penetration tester based in Greece, with a purple team
+              I&apos;m a network engineer and cybersecurity analyst based in Greece, with a purple team
               mindset — I think like an attacker, defend like an engineer.
 
               My core is networking: MikroTik infrastructure, complex VLANs, VPN tunnels, BGP,
@@ -43,7 +43,7 @@ export function AboutSection() {
 ioannis
 $ cat roles.txt
 > Network Engineer (MikroTik / VLAN / VPN)
-> Penetration Tester
+> Cybersecurity Analyst
 > Purple Team Operator
 > Full Stack Developer
 > IoT & RF Systems Engineer

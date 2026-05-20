@@ -15,7 +15,7 @@ const jetBrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Ioannis | Security & Development",
   description:
-    "Professional portfolio for Ioannis (wannabexaker), a network engineer, penetration tester, and full stack developer.",
+    "Professional portfolio for Ioannis (wannabexaker), a network engineer, cybersecurity analyst, and full stack developer.",
 };
 
 export default function RootLayout({

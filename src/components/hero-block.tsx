@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 
 const roles = [
   "Network Engineer",
-  "Penetration Tester",
+  "Cybersecurity Analyst",
   "Purple Team Operator",
   "Full Stack Developer",
 ];
@@ -89,7 +89,7 @@ export function HeroBlock() {
         </div>
 
         <p className="mx-auto max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
-          Network engineer, penetration tester &amp; full-stack developer.
+          Network engineer, cybersecurity analyst &amp; full-stack developer.
           I design, build, and secure it all — also I break things to understand them, then build them better.
         </p>
 
