@@ -216,6 +216,62 @@ export function ProjectsSection() {
         </div>
       </a>
 
+      {/* Featured: MCQ Trainer */}
+      <a
+        href="/mcq-trainer/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative mt-5 block overflow-hidden rounded-xl border border-primary/30 bg-gradient-to-br from-secondary/8 via-black/70 to-primary/7 p-6 transition-all duration-300 hover:border-primary/70 hover:shadow-[0_0_38px_rgba(0,255,136,0.16)]"
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(14,165,233,0.10),transparent_60%)] pointer-events-none" />
+        <div className="absolute inset-0 opacity-20 pointer-events-none [background:linear-gradient(transparent_49%,rgba(255,255,255,0.08)_50%,transparent_51%)] [background-size:100%_6px]" />
+
+        <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex-1">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-widest text-primary">
+                Featured
+              </span>
+              <span className="font-mono text-xs text-muted-foreground">2026</span>
+            </div>
+            <h3 className="mt-2 font-mono text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-200">
+              MCQ Trainer
+            </h3>
+            <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              Multiple-choice question trainer with pre-built Networking / Cybersecurity / IT sets, bring-your-own <code className="font-mono text-xs">q_*.json</code> import, exam mode, practice mode, timer, and a built-in AI prompt to generate questions from any book or text. Offline-capable PWA, also shipped as a native Android APK.
+            </p>
+            <div className="mt-4 flex items-center gap-2 font-mono text-sm text-primary opacity-80 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
+              Open live demo
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block"><path d="M6 3h7v7M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
+          </div>
+
+          <div className="relative w-full max-w-sm shrink-0 overflow-hidden rounded-lg border border-secondary/35 bg-black/75 p-3 shadow-[0_0_24px_rgba(14,165,233,0.12)]">
+            <div className="mb-2 flex items-center gap-1.5">
+              <span className="h-2 w-2 rounded-full bg-red-400/80" />
+              <span className="h-2 w-2 rounded-full bg-yellow-400/80" />
+              <span className="h-2 w-2 rounded-full bg-green-400/80" />
+              <span className="ml-2 font-mono text-[10px] uppercase tracking-wide text-secondary/80">mcq.live</span>
+            </div>
+            <div className="relative h-24 overflow-hidden rounded border border-white/10 bg-black/70 p-2 font-mono text-[9px] text-emerald-300/90">
+              <div className="opacity-80">Q3. Which OSI layer handles end-to-end reliable delivery?</div>
+              <div className="mt-1 flex flex-col gap-0.5">
+                <div className="opacity-70">A. Network (3)</div>
+                <div className="rounded bg-emerald-500/15 px-1 text-emerald-200">B. Transport (4) ✓</div>
+                <div className="opacity-70">C. Session (5)</div>
+              </div>
+              <div className="absolute right-1 top-1 rounded bg-secondary/30 px-1 py-0.5 text-[8px] uppercase tracking-wider text-secondary">3/30</div>
+            </div>
+            <div className="mt-2 flex items-center justify-between font-mono text-[9px] uppercase tracking-wider text-muted-foreground">
+              <span>networking</span>
+              <span>cyber</span>
+              <span>it</span>
+              <span>+import</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
       <div className="relative mt-8 grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="space-y-4">
           {projects.map((project) => (

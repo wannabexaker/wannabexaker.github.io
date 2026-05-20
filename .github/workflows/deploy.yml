@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       EM_SPECTRUM_PATH: ./em-spectrum-source
+      MCQ_PATH: ./mcq-source
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,6 +30,13 @@ jobs:
         with:
           repository: wannabexaker/EM_Spectrum
           path: em-spectrum-source
+
+      - name: Checkout MCQ source
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          repository: wannabexaker/mcq
+          path: mcq-source
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

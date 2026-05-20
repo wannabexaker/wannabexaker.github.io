@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "sync:em-spectrum": "node scripts/sync-em-spectrum.mjs",
-    "build": "npm run sync:em-spectrum && next build",
+    "sync:mcq": "node scripts/sync-mcq.mjs",
+    "build": "npm run sync:em-spectrum && npm run sync:mcq && next build",
     "start": "next start",
     "lint": "eslint"
   },
