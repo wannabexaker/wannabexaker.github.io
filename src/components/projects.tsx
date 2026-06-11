@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { Play, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -26,6 +27,7 @@ type Project = {
   year: string;
   image: string;
   objectPosition?: string;
+  video?: string;
 };
 
 const fallbackProjects: Project[] = [
@@ -52,7 +54,8 @@ const fallbackProjects: Project[] = [
     description: "Telegram-based monitoring & control for MikroTik networks — real-time alerts, client management, guest WiFi rotation with QR codes, automated config backups. Python + Raspberry Pi.",
     url: "https://github.com/wannabexaker/NetSentry",
     year: "2026",
-    image: "/screenshots/NetSentry.png",
+    image: "/screenshots/NetSentry.jpg",
+    video: "/videos/netsentry.mp4",
   },
   {
     id: 4,
@@ -64,10 +67,10 @@ const fallbackProjects: Project[] = [
   },
 ];
 
-const repoScreenshots: Record<string, { image: string; objectPosition?: string }> = {
+const repoScreenshots: Record<string, { image: string; objectPosition?: string; video?: string }> = {
   PMD: { image: "/screenshots/pmd.png", objectPosition: "65% center" },
   SafestNotes: { image: "/screenshots/safestnotes.jpg" },
-  "NetSentry": { image: "/screenshots/NetSentry.png" },
+  "NetSentry": { image: "/screenshots/NetSentry.jpg", video: "/videos/netsentry.mp4" },
   "The_Eye_in_the_Sky": { image: "/screenshots/The_Eye_in_the_Sky.png" },
 };
 
@@ -83,6 +86,7 @@ function mapReposToProjects(repos: GitHubRepo[]): Project[] {
       repoScreenshots[repo.name]?.image ??
       `https://opengraph.githubassets.com/1/wannabexaker/${encodeURIComponent(repo.name)}`,
     objectPosition: repoScreenshots[repo.name]?.objectPosition,
+    video: repoScreenshots[repo.name]?.video,
   }));
 }
 
@@ -91,6 +95,16 @@ export function ProjectsSection() {
   const [projects, setProjects] = useState<Project[]>(fallbackProjects);
   const [activeId, setActiveId] = useState<number>(fallbackProjects[0]?.id ?? 1);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [videoProject, setVideoProject] = useState<Project | null>(null);
+
+  useEffect(() => {
+    if (!videoProject) return;
+    function onKey(event: KeyboardEvent) {
+      if (event.key === "Escape") setVideoProject(null);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [videoProject]);
 
   useEffect(() => {
     let ignore = false;
@@ -124,6 +138,7 @@ export function ProjectsSection() {
               year: new Date(repo.created_at).getFullYear().toString(),
               image: repoScreenshots[repo.name]?.image ?? `https://opengraph.githubassets.com/1/wannabexaker/${encodeURIComponent(repo.name)}`,
               objectPosition: repoScreenshots[repo.name]?.objectPosition,
+              video: repoScreenshots[repo.name]?.video,
             };
           }
           return fallback ?? null;
@@ -286,7 +301,12 @@ export function ProjectsSection() {
               onFocus={() => setActiveId(project.id)}
               tabIndex={0}
             >
-              <Link href={project.url} target="_blank" rel="noopener noreferrer" className="block p-5">
+              <Link
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={project.video ? "block p-5 pb-3" : "block p-5"}
+              >
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="font-mono text-base font-semibold text-foreground glitch-hover">
                     {project.title}
@@ -297,6 +317,18 @@ export function ProjectsSection() {
                 </div>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">{project.description}</p>
               </Link>
+              {project.video && (
+                <div className="px-5 pb-4">
+                  <button
+                    type="button"
+                    onClick={() => setVideoProject(project)}
+                    className="inline-flex items-center gap-2 rounded-md border border-primary/40 px-3 py-1.5 font-mono text-xs text-primary transition-colors duration-200 hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/80"
+                  >
+                    <Play className="size-3.5" />
+                    watch_demo
+                  </button>
+                </div>
+              )}
             </Card>
           ))}
 
@@ -327,6 +359,52 @@ export function ProjectsSection() {
           )}
         </div>
       </div>
+
+      <AnimatePresence>
+        {videoProject?.video && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
+            initial={reducedMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: reducedMotion ? 0 : 0.2 }}
+            onClick={() => setVideoProject(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${videoProject.title} demo video`}
+          >
+            <motion.div
+              className="relative w-full max-w-4xl"
+              initial={reducedMotion ? false : { opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: reducedMotion ? 0 : 0.2 }}
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="mb-2 flex items-center justify-between">
+                <span className="font-mono text-sm text-primary">
+                  &gt; {videoProject.title} — demo_
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setVideoProject(null)}
+                  aria-label="Close video"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors duration-200 hover:border-primary/50 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/80"
+                >
+                  <X className="size-5" />
+                </button>
+              </div>
+              <video
+                src={videoProject.video}
+                controls
+                autoPlay
+                playsInline
+                className="w-full rounded-xl border border-primary/30 bg-black shadow-[0_0_45px_rgba(0,255,136,0.12)]"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
