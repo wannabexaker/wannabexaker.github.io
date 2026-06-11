@@ -374,7 +374,7 @@ export function ProjectsSection() {
             aria-label={`${videoProject.title} demo video`}
           >
             <motion.div
-              className="relative w-full max-w-4xl"
+              className="relative w-fit max-w-[min(90vw,64rem)]"
               initial={reducedMotion ? false : { opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.96 }}
@@ -399,7 +399,7 @@ export function ProjectsSection() {
                 controls
                 autoPlay
                 playsInline
-                className="w-full rounded-xl border border-primary/30 bg-black shadow-[0_0_45px_rgba(0,255,136,0.12)]"
+                className="max-h-[80vh] w-auto max-w-full rounded-xl border border-primary/30 bg-black shadow-[0_0_45px_rgba(0,255,136,0.12)]"
               />
             </motion.div>
           </motion.div>
