@@ -32,13 +32,13 @@ type Project = {
 
 const fallbackProjects: Project[] = [
   {
-    id: 1,
-    title: "PMD — Project Manager Desktop",
-    description: "Local project management desktop app with colored task tracking and workflow automation.",
-    url: "https://github.com/wannabexaker/PMD",
+    id: 3,
+    title: "NetSentry",
+    description: "Telegram-based monitoring & control for MikroTik networks — real-time alerts, client management, guest WiFi rotation with QR codes, automated config backups. Python + Raspberry Pi.",
+    url: "https://github.com/wannabexaker/NetSentry",
     year: "2026",
-    image: "/screenshots/pmd.png",
-    objectPosition: "65% center",
+    image: "/screenshots/NetSentry.jpg",
+    video: "/videos/netsentry.mp4",
   },
   {
     id: 2,
@@ -49,13 +49,13 @@ const fallbackProjects: Project[] = [
     image: "/screenshots/safestnotes.jpg",
   },
   {
-    id: 3,
-    title: "NetSentry",
-    description: "Telegram-based monitoring & control for MikroTik networks — real-time alerts, client management, guest WiFi rotation with QR codes, automated config backups. Python + Raspberry Pi.",
-    url: "https://github.com/wannabexaker/NetSentry",
+    id: 1,
+    title: "PMD — Project Manager Desktop",
+    description: "Local project management desktop app with colored task tracking and workflow automation.",
+    url: "https://github.com/wannabexaker/PMD",
     year: "2026",
-    image: "/screenshots/NetSentry.jpg",
-    video: "/videos/netsentry.mp4",
+    image: "/screenshots/pmd.png",
+    objectPosition: "65% center",
   },
   {
     id: 4,
@@ -120,7 +120,7 @@ export function ProjectsSection() {
         }
 
         const repos = (await response.json()) as GitHubRepo[];
-        const PINNED = ["PMD", "SafestNotes", "NetSentry", "The_Eye_in_the_Sky"];
+        const PINNED = ["NetSentry", "SafestNotes", "PMD", "The_Eye_in_the_Sky"];
         const byName = Object.fromEntries(repos.map((r) => [r.name, r]));
         const fallbackByName = Object.fromEntries(
           fallbackProjects.map((p) => [p.url.split("/").pop() ?? "", p])
