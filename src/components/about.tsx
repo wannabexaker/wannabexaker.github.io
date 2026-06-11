@@ -44,7 +44,7 @@ ioannis
 $ cat roles.txt
 > Network Engineer (MikroTik / VLAN / VPN)
 > Cybersecurity Analyst
-> Purple Team Operator
+> Wireless Telecoms Expert
 > Full Stack Developer
 > IoT & RF Systems Engineer
 > Embedded Systems (RPi / Arduino)

@@ -48,11 +48,11 @@ const fallbackProjects: Project[] = [
   },
   {
     id: 3,
-    title: "skycode",
-    description: "Offline-first AI coding agent — tool calling, file ops, git, multi-agent workflows, 100% local via Ollama.",
-    url: "https://github.com/wannabexaker/skycode",
+    title: "NetSentry",
+    description: "Telegram-based monitoring & control for MikroTik networks — real-time alerts, client management, guest WiFi rotation with QR codes, automated config backups. Python + Raspberry Pi.",
+    url: "https://github.com/wannabexaker/NetSentry",
     year: "2026",
-    image: "/screenshots/Sky-code.png",
+    image: "/screenshots/NetSentry.png",
   },
   {
     id: 4,
@@ -67,7 +67,7 @@ const fallbackProjects: Project[] = [
 const repoScreenshots: Record<string, { image: string; objectPosition?: string }> = {
   PMD: { image: "/screenshots/pmd.png", objectPosition: "65% center" },
   SafestNotes: { image: "/screenshots/safestnotes.jpg" },
-  "skycode": { image: "/screenshots/Sky-code.png" },
+  "NetSentry": { image: "/screenshots/NetSentry.png" },
   "The_Eye_in_the_Sky": { image: "/screenshots/The_Eye_in_the_Sky.png" },
 };
 
@@ -106,7 +106,7 @@ export function ProjectsSection() {
         }
 
         const repos = (await response.json()) as GitHubRepo[];
-        const PINNED = ["PMD", "SafestNotes", "skycode", "The_Eye_in_the_Sky"];
+        const PINNED = ["PMD", "SafestNotes", "NetSentry", "The_Eye_in_the_Sky"];
         const byName = Object.fromEntries(repos.map((r) => [r.name, r]));
         const fallbackByName = Object.fromEntries(
           fallbackProjects.map((p) => [p.url.split("/").pop() ?? "", p])

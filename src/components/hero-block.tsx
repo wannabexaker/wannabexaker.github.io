@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 const roles = [
   "Network Engineer",
   "Cybersecurity Analyst",
-  "Purple Team Operator",
+  "Wireless Telecoms Expert",
   "Full Stack Developer",
 ];
 
