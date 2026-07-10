@@ -253,7 +253,7 @@ export function ProjectsSection() {
               MCQ Trainer
             </h3>
             <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              Multiple-choice question trainer with pre-built Networking / Cybersecurity / IT sets, bring-your-own <code className="font-mono text-xs">q_*.json</code> import, exam mode, practice mode, timer, and a built-in AI prompt to generate questions from any book or text. Offline-capable PWA, also shipped as a native Android APK.
+              Multiple-choice question trainer with pre-built Networking / Cybersecurity / SQL / IT sets, bring-your-own <code className="font-mono text-xs">q_*.json</code> import, exam mode, practice mode, timer, and a built-in AI prompt to generate questions from any book or text. Offline-capable PWA, also shipped as a native Android APK.
             </p>
             <div className="mt-4 flex items-center gap-2 font-mono text-sm text-primary opacity-80 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
               Open live demo
@@ -280,6 +280,7 @@ export function ProjectsSection() {
             <div className="mt-2 flex items-center justify-between font-mono text-[9px] uppercase tracking-wider text-muted-foreground">
               <span>networking</span>
               <span>cyber</span>
+              <span>sql</span>
               <span>it</span>
               <span>+import</span>
             </div>
