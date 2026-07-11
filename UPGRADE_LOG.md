@@ -102,10 +102,10 @@
 
 **Επιβεβαιώθηκε στο build**: manifest.webmanifest + 3 icons στο `out/`, `rel="manifest"` + `rel="apple-touch-icon"` links στο HTML, όλα τα JSON-LD types παρόντα (Person, WebSite, ProfilePage, ItemList, 6× ListItem).
 
-**Τι μένει για SEO που ΔΕΝ γίνεται από τον κώδικα** (θέλει δική σου ενέργεια):
-1. **Google Search Console**: κάνε verify το site (DNS ή HTML meta — αν πάρεις token πες μου να το προσθέσω) και υπόβαλε το `sitemap.xml`. Χωρίς αυτό η Google αργεί να τα δει όλα.
-2. **Backlinks**: βάλε το site URL στο GitHub profile bio, LinkedIn, και στα READMEs των projects — τα inbound links είναι ο μεγαλύτερος ranking παράγοντας που λείπει.
-3. Χρόνος: τα structured data θέλουν λίγες εβδομάδες να εμφανιστούν σε rich results.
+**Off-site SEO status:**
+1. ✅ **Google Search Console**: verified (2026-07-12, meta tag + HTML file) και το `sitemap.xml` υποβλήθηκε.
+2. ⏳ **Backlinks**: βάλε το site URL στο GitHub profile bio, LinkedIn, και στα READMEs των projects — τα inbound links είναι ο μεγαλύτερος ranking παράγοντας που λείπει.
+3. ⏳ Χρόνος: τα structured data θέλουν λίγες εβδομάδες να εμφανιστούν σε rich results· τα πρώτα Search Console δεδομένα σε 2-3 μέρες.
 
 ---
 
