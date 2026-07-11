@@ -109,6 +109,22 @@
 
 ---
 
+## Step 7 — SQL Injection writeup (case study)
+
+Το εκκρεμές case study υλοποιήθηκε ως **σελίδα μέσα στο site** (όχι ξεχωριστό repo) — βέλτιστο για SEO (indexable long-form content), self-contained, χωρίς θέμα δεδομένων πελατών.
+
+- **Νέα σελίδα** `src/app/writeups/sql-injection/page.tsx` → `/writeups/sql-injection`. Server component (περιεχόμενο στο HTML για crawlers), terminal aesthetic, δικά της metadata + OpenGraph.
+- **Δομή purple-team** (7 sections): Environment → Discovery → Exploitation → Impact → Remediation → Detection → Verification, με authorization banner στην κορυφή (authorized home-lab, isolated VM — ρητό disclaimer).
+- **Τεχνικό περιεχόμενο**: vulnerable concatenation → error-based discovery, ORDER BY column count, auth bypass tautology, UNION extraction, boolean/time-blind· μετά remediation με parameterized queries (Node + C#/.NET before/after), least privilege, input validation, WAF· και detection signatures (log patterns, Suricata/IDS, SIEM).
+- **Featured card** στο projects section (κόκκινο security accent, terminal mock με το `admin' --` payload) → link στη σελίδα.
+- **SEO plumbing**: προστέθηκε στο `sitemap.ts`, TechArticle JSON-LD στη σελίδα + entry στο site-wide `@graph` (layout.tsx).
+
+**Επιβεβαιώθηκε**: build OK, `out/writeups/sql-injection.html` παράγεται, sitemap + index link παρόντα, lint καθαρό, οπτικός έλεγχος desktop + mobile (code blocks scroll-άρουν σωστά, η σελίδα δεν σπάει).
+
+> **Σημείωση περιεχομένου:** Το writeup είναι γραμμένο ως authorized lab exercise με τεχνικά ακριβές, αλλά generic περιεχόμενο. Μπορείς να το εξατομικεύσεις με πραγματικά στοιχεία από δικό σου lab (screenshots, specific payloads, το DB schema σου) όποτε θες — η δομή είναι έτοιμη.
+
+---
+
 ## Προτάσεις για την επόμενη φορά (8 → 9+)
 
 1. **Ρόλοι στο terminal block: 9 → 4** — επιλογή των ισχυρότερων (θέλει δική σου απόφαση, είναι identity)

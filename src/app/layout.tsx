@@ -209,6 +209,17 @@ const jsonLd = {
         },
       ],
     },
+    {
+      "@type": "TechArticle",
+      "@id": `${SITE_URL}/writeups/sql-injection#article`,
+      headline: "SQL Injection: From Discovery to Remediation",
+      description:
+        "Authorized home-lab walkthrough of SQL injection — discovery, exploitation, impact, and parameterized-query remediation.",
+      url: `${SITE_URL}/writeups/sql-injection`,
+      author: { "@id": `${SITE_URL}/#person` },
+      publisher: { "@id": `${SITE_URL}/#person` },
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+    },
   ],
 };
 
