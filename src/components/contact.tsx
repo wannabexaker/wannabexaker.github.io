@@ -1,38 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Check, Code2, Copy, FileDown, Mail } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
 
 const EMAIL = "dimos.is.dev@gmail.com";
-const COUNT_NAMESPACE = "wannabexaker-portfolio";
-const COUNT_KEY = "email-copy";
 
 export function ContactSection() {
   const [copied, setCopied] = useState(false);
-  const [copyCount, setCopyCount] = useState<number | null>(null);
-
-  useEffect(() => {
-    fetch(`https://api.countapi.xyz/get/${COUNT_NAMESPACE}/${COUNT_KEY}`)
-      .then((r) => r.json())
-      .then((data) => {
-        if (typeof data.value === "number") setCopyCount(data.value);
-      })
-      .catch(() => {});
-  }, []);
 
   function handleCopy() {
     navigator.clipboard.writeText(EMAIL).catch(() => {});
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-
-    fetch(`https://api.countapi.xyz/hit/${COUNT_NAMESPACE}/${COUNT_KEY}`)
-      .then((r) => r.json())
-      .then((data) => {
-        if (typeof data.value === "number") setCopyCount(data.value);
-      })
-      .catch(() => {});
   }
 
   return (
@@ -88,11 +69,6 @@ export function ContactSection() {
                 </span>
                 {!copied && <Copy className="size-3 text-muted-foreground/40 transition-opacity group-hover:opacity-100" />}
               </div>
-              {copyCount !== null && (
-                <span className="font-mono text-[10px] text-muted-foreground/40">
-                  {copyCount} {copyCount === 1 ? "copy" : "copies"}
-                </span>
-              )}
             </CardContent>
           </Card>
         </button>

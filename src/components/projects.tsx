@@ -74,22 +74,6 @@ const repoScreenshots: Record<string, { image: string; objectPosition?: string; 
   "The_Eye_in_the_Sky": { image: "/screenshots/The_Eye_in_the_Sky.png" },
 };
 
-function mapReposToProjects(repos: GitHubRepo[]): Project[] {
-  return repos.slice(0, 4).map((repo) => ({
-    id: repo.id,
-    title: repo.name,
-    description:
-      repo.description ?? "Cybersecurity and software engineering project from wannabexaker.",
-    url: repo.html_url,
-    year: new Date(repo.created_at).getFullYear().toString(),
-    image:
-      repoScreenshots[repo.name]?.image ??
-      `https://opengraph.githubassets.com/1/wannabexaker/${encodeURIComponent(repo.name)}`,
-    objectPosition: repoScreenshots[repo.name]?.objectPosition,
-    video: repoScreenshots[repo.name]?.video,
-  }));
-}
-
 export function ProjectsSection() {
   const reducedMotion = useReducedMotion();
   const [projects, setProjects] = useState<Project[]>(fallbackProjects);
