@@ -78,6 +78,16 @@
 - ✅ 4 commits, 5 tags — rollback οποιαδήποτε στιγμή
 - ⚠️ Προϋπάρχον (ΔΕΝ αγγίχτηκε): 16 lint errors σε shadcn/ui components (`react-hooks/set-state-in-effect` κ.ά.) — cosmetic, δεν επηρεάζουν το build
 
+## Step 5 — Οριστική αφαίρεση skycode (απόφαση 2026-07-11)
+
+Ο χρήστης αποφάσισε: το skycode ΔΕΝ θα ξαναμπεί στο portfolio.
+
+- **Διαγράφηκε** το `public/screenshots/Sky-code.png` (τελευταίο απομεινάρι — ανακτήσιμο από git history αν ποτέ χρειαστεί: `git show bak-step4-content:public/screenshots/Sky-code.png`).
+- **README.md**: η λίστα pinned repos διορθώθηκε από "(PMD, SafestNotes, skycode, The_Eye_in_the_Sky)" στη σωστή τρέχουσα "(NetSentry, SafestNotes, PMD, The_Eye_in_the_Sky)".
+- Ο κώδικας (`projects.tsx`) ήταν ήδη καθαρός από skycode από προηγούμενη αλλαγή (NetSentry swap).
+
+---
+
 ## Προτάσεις για την επόμενη φορά (8 → 9+)
 
 1. **Ρόλοι στο terminal block: 9 → 4** — επιλογή των ισχυρότερων (θέλει δική σου απόφαση, είναι identity)

@@ -11,7 +11,7 @@ Statically exported Next.js site deployed to GitHub Pages. All content is hardco
 ## Features
 
 - Single-page layout with five content sections: Hero, About, Skills, Projects, Contact
-- Client-side GitHub API fetch on mount — loads the four pinned repos (PMD, SafestNotes, skycode, The_Eye_in_the_Sky) with graceful fallback to hardcoded data
+- Client-side GitHub API fetch on mount — loads the four pinned repos (NetSentry, SafestNotes, PMD, The_Eye_in_the_Sky) with graceful fallback to hardcoded data
 - Framer Motion animations with `useReducedMotion()` support — animations are skipped when the OS accessibility setting is active
 - Dark terminal aesthetic with custom CSS classes (`terminal-title`, `glitch-hover`, `scanlines`, `terminal-cursor`)
 - GitHub Actions CI/CD — pushes to `main` trigger a full build and deploy to GitHub Pages
