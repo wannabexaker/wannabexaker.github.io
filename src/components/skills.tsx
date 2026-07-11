@@ -1,4 +1,4 @@
-import { Cpu, Code2, Database, Globe, Lock, Network, Radio, Shield, Terminal, Wrench, Zap } from "lucide-react";
+import { Cpu, Code2, Database, Globe, Lock, Network, Radio, Shield, Terminal, VenetianMask, Wrench, Zap } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -24,6 +24,21 @@ const cards: SkillCard[] = [
       "Privilege Escalation",
       "Network Scanning",
       "Burp Suite · Metasploit",
+    ],
+  },
+  {
+    title: "Social Engineering & Physical",
+    accent: "hover:border-purple-500/60",
+    glow: "hover:shadow-[0_0_22px_rgba(168,85,247,0.30)]",
+    icon: VenetianMask,
+    items: [
+      "Pretexting & Impersonation",
+      "Elicitation & Trust Building",
+      "Phishing / Vishing Campaigns",
+      "Rubber Ducky / BadUSB (HID Injection)",
+      "RFID / NFC Cloning & Access Bypass",
+      "Physical Access Testing",
+      "OSINT",
     ],
   },
   {

@@ -149,6 +149,18 @@
 
 ---
 
+## Step 9 — Νέα κάρτα: Social Engineering & Physical
+
+Ο χρήστης επισήμανε πραγματικά skills που έλειπαν και τα τοποθέτησε (λανθασμένα) στο Purple Team. Διόρθωση: αυτά είναι **offensive (red-team physical & social)**, όχι purple (που = red+blue συνεργασία). Μπήκαν σε **δική τους κάρτα** — differentiator, όχι buried.
+
+- **Νέα κάρτα "Social Engineering & Physical"** (μοβ accent, `VenetianMask` icon), 2η στη σειρά μετά το Offensive Security. Items: Pretexting & Impersonation, Elicitation & Trust Building, Phishing / Vishing Campaigns, Rubber Ducky / BadUSB (HID Injection), RFID / NFC Cloning & Access Bypass, Physical Access Testing, OSINT.
+- **Bio ενισχύθηκε**: η security πρόταση αναφέρει τώρα ρητά "social engineering and physical access (badge cloning, BadUSB, pretexting)".
+- Skills: 9 → 10 κάρτες, 63 → 70 items.
+
+**Επιβεβαιώθηκε**: build OK, lint καθαρό, a11y tree (κάρτα + 7 items στη σωστή θέση), bio updated.
+
+---
+
 ## Προτάσεις για την επόμενη φορά (8 → 9+)
 
 1. **Ρόλοι στο terminal block: 9 → 4** — επιλογή των ισχυρότερων (θέλει δική σου απόφαση, είναι identity)

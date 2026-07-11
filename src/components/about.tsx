@@ -15,7 +15,8 @@ export function AboutSection() {
             <p className="max-w-prose text-base leading-8 text-foreground/90 sm:text-lg">
               My core is networking: MikroTik infrastructure, complex VLANs, VPN tunnels, BGP,
               OSPF, QoS, and full network automation. On the security side I run authorized
-              assessments — web app, wireless, infrastructure — then stay to harden what I found.
+              assessments — web app, wireless, infrastructure, plus social engineering and physical
+              access (badge cloning, BadUSB, pretexting) — then stay to harden what I found.
             </p>
             <p className="max-w-prose text-base leading-8 text-foreground/90 sm:text-lg">
               In the field I work across the full RF spectrum (12.5KHz–90GHz): LoRa, wMBUS,
