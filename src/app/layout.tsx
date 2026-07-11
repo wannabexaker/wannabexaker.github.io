@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -63,32 +63,149 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "256x256" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
-const personJsonLd = {
+export const viewport: Viewport = {
+  themeColor: "#060a08",
+};
+
+const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Ioannis Dimos",
-  alternateName: "wannabexaker",
-  url: SITE_URL,
-  image: `${SITE_URL}/og.png`,
-  jobTitle: "Cybersecurity Analyst & Network Engineer",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Athens",
-    addressCountry: "GR",
-  },
-  sameAs: [
-    "https://github.com/wannabexaker",
-    "https://www.linkedin.com/in/jiannisnw/",
-  ],
-  knowsAbout: [
-    "Cybersecurity",
-    "Network Engineering",
-    "MikroTik RouterOS",
-    "RF & Wireless Systems",
-    "IoT",
-    "Full-Stack Development",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Ioannis Dimos",
+      alternateName: "wannabexaker",
+      url: SITE_URL,
+      image: `${SITE_URL}/og.png`,
+      jobTitle: "Cybersecurity Analyst & Network Engineer",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Athens",
+        addressCountry: "GR",
+      },
+      sameAs: [
+        "https://github.com/wannabexaker",
+        "https://www.linkedin.com/in/jiannisnw/",
+      ],
+      knowsAbout: [
+        "Cybersecurity",
+        "Network Engineering",
+        "MikroTik RouterOS",
+        "RF & Wireless Systems",
+        "IoT",
+        "Full-Stack Development",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Ioannis Dimos — wannabexaker",
+      description: SITE_DESCRIPTION,
+      publisher: { "@id": `${SITE_URL}/#person` },
+      inLanguage: "en",
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${SITE_URL}/#profilepage`,
+      url: SITE_URL,
+      name: SITE_TITLE,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#person` },
+      mainEntity: { "@id": `${SITE_URL}/#person` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${SITE_URL}/#projects`,
+      name: "Selected Projects",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          item: {
+            "@type": "SoftwareSourceCode",
+            name: "NetSentry",
+            description:
+              "Telegram-based monitoring & control for MikroTik networks — real-time alerts, guest WiFi rotation with QR codes, automated config backups.",
+            codeRepository: "https://github.com/wannabexaker/NetSentry",
+            programmingLanguage: "Python",
+            author: { "@id": `${SITE_URL}/#person` },
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          item: {
+            "@type": "WebApplication",
+            name: "EM Spectrum Explorer",
+            description:
+              "Interactive electromagnetic spectrum atlas with WebGL zoom/pan — RF bands, wireless technologies, and modulation types.",
+            url: `${SITE_URL}/em-spectrum/`,
+            applicationCategory: "EducationalApplication",
+            author: { "@id": `${SITE_URL}/#person` },
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          item: {
+            "@type": "WebApplication",
+            name: "MCQ Trainer",
+            description:
+              "Multiple-choice exam trainer with Networking / Cybersecurity / SQL / IT question sets, exam and practice modes — offline PWA and Android APK.",
+            url: `${SITE_URL}/mcq-trainer/`,
+            applicationCategory: "EducationalApplication",
+            author: { "@id": `${SITE_URL}/#person` },
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          item: {
+            "@type": "SoftwareSourceCode",
+            name: "SafestNotes",
+            description:
+              "Encrypted local notes app for Android — zero-network, privacy-first note storage.",
+            codeRepository: "https://github.com/wannabexaker/SafestNotes",
+            author: { "@id": `${SITE_URL}/#person` },
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 5,
+          item: {
+            "@type": "SoftwareSourceCode",
+            name: "PMD — Project Manager Desktop",
+            description:
+              "Local project management desktop app with colored task tracking and workflow automation.",
+            codeRepository: "https://github.com/wannabexaker/PMD",
+            author: { "@id": `${SITE_URL}/#person` },
+          },
+        },
+        {
+          "@type": "ListItem",
+          position: 6,
+          item: {
+            "@type": "SoftwareSourceCode",
+            name: "The Eye in the Sky",
+            description:
+              "Full-stack slot simulation platform — React player shell, admin panel, math engine validation, and Node.js API.",
+            codeRepository: "https://github.com/wannabexaker/The_Eye_in_the_Sky",
+            author: { "@id": `${SITE_URL}/#person` },
+          },
+        },
+      ],
+    },
   ],
 };
 
@@ -105,7 +222,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
       </body>

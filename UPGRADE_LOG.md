@@ -88,6 +88,27 @@
 
 ---
 
+## Step 6 — SEO Round 2
+
+- **Νέα app icons** (`icon-192.png`, `icon-512.png`, `apple-touch-icon.png`): terminal prompt `>_` με πράσινο glow, ίδια αισθητική με το site. Rendered με headless Chrome, resized με sharp.
+- **`src/app/manifest.ts`**: παράγει `/manifest.webmanifest` (name, icons, theme/background color) — linked αυτόματα στο `<head>`.
+- **`theme-color` meta** μέσω Next `viewport` export (`#060a08`) — το browser chrome σε mobile χρωματίζεται στο θέμα του site.
+- **JSON-LD αναβαθμισμένο σε `@graph`** με 4 οντότητες:
+  - `Person` (όπως πριν, τώρα με `@id` για references)
+  - `WebSite` (publisher → Person)
+  - `ProfilePage` (mainEntity → Person — σηματοδοτεί στη Google ότι είναι προσωπικό portfolio)
+  - `ItemList` 6 projects ως `SoftwareSourceCode`/`WebApplication` με repo/live URLs και author → Person
+- **Sitemap**: προστέθηκε `lastModified` σε όλα τα URLs.
+
+**Επιβεβαιώθηκε στο build**: manifest.webmanifest + 3 icons στο `out/`, `rel="manifest"` + `rel="apple-touch-icon"` links στο HTML, όλα τα JSON-LD types παρόντα (Person, WebSite, ProfilePage, ItemList, 6× ListItem).
+
+**Τι μένει για SEO που ΔΕΝ γίνεται από τον κώδικα** (θέλει δική σου ενέργεια):
+1. **Google Search Console**: κάνε verify το site (DNS ή HTML meta — αν πάρεις token πες μου να το προσθέσω) και υπόβαλε το `sitemap.xml`. Χωρίς αυτό η Google αργεί να τα δει όλα.
+2. **Backlinks**: βάλε το site URL στο GitHub profile bio, LinkedIn, και στα READMEs των projects — τα inbound links είναι ο μεγαλύτερος ranking παράγοντας που λείπει.
+3. Χρόνος: τα structured data θέλουν λίγες εβδομάδες να εμφανιστούν σε rich results.
+
+---
+
 ## Προτάσεις για την επόμενη φορά (8 → 9+)
 
 1. **Ρόλοι στο terminal block: 9 → 4** — επιλογή των ισχυρότερων (θέλει δική σου απόφαση, είναι identity)
