@@ -54,3 +54,34 @@
 - Ποιότητα ελέγχθηκε οπτικά — κείμενο ευκρινές, χωρίς artifacts. WebP υποστηρίζεται από όλους τους σύγχρονους browsers.
 
 **Αποτέλεσμα:** το βαρύτερο σημείο του site (preview panel εικόνες) φορτώνει ~8× γρηγορότερα.
+
+---
+
+## Step 4 — Διόρθωση About (wall of text)
+
+Το bio στο About render-αρόταν ως **ένα ενιαίο paragraph ~150 λέξεων** — οι κενές γραμμές στο JSX δεν δημιουργούν line breaks στο HTML. Σπάστηκε σε 5 πραγματικά `<p>` με `space-y-4`:
+
+1. Intro (ποιος είμαι, purple team mindset)
+2. Networking & security core
+3. RF & field work
+4. Dev & hardware
+5. Punchline — "If it runs on electrons..." τώρα ξεχωρίζει με primary χρώμα
+
+**Οι λέξεις είναι ΑΚΡΙΒΩΣ οι ίδιες** — καμία αλλαγή στο περιεχόμενο, μόνο στη δομή. (Dev+hardware ενώθηκαν σε ένα paragraph για ισορροπία στήλης.)
+
+---
+
+## Τελική κατάσταση
+
+- ✅ Build πέρασε σε κάθε βήμα (5 συνολικά verifications)
+- ✅ ESLint καθαρό σε όλα τα αρχεία που αγγίχτηκαν
+- ✅ 4 commits, 5 tags — rollback οποιαδήποτε στιγμή
+- ⚠️ Προϋπάρχον (ΔΕΝ αγγίχτηκε): 16 lint errors σε shadcn/ui components (`react-hooks/set-state-in-effect` κ.ά.) — cosmetic, δεν επηρεάζουν το build
+
+## Προτάσεις για την επόμενη φορά (8 → 9+)
+
+1. **Ρόλοι στο terminal block: 9 → 4** — επιλογή των ισχυρότερων (θέλει δική σου απόφαση, είναι identity)
+2. **Skills curation** — top 6-8 items ανά κάρτα, τα υπόλοιπα συμπτυγμένα
+3. **SQL injection lab writeup** — το εκκρεμές case study· αυτό ανεβάζει το portfolio κατηγορία
+4. **Mobile menu** — το λευκό sheet σπάει το dark theme (αν είναι σκόπιμο, αγνόησέ το)
+5. Custom domain (π.χ. .dev) + analytics (GoatCounter/Plausible, δωρεάν & private)
