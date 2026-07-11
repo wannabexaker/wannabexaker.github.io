@@ -182,6 +182,27 @@
 
 ---
 
+## Step 12 — Skills: ενοποίηση σε 6 κάρτες (grid parity)
+
+Ο χρήστης θέλει το skills grid πάντα καθαρό — **6 κάρτες** βγαίνει τέλεια και σε 2 στήλες (3×2) και σε 3 στήλες (2×3), ποτέ ορφανή κάρτα (το 9 ή 10 άφηνε πάντα ένα leftover). Επίσης ζήτησε το step-9 "Social Engineering & Physical" card να μπει μέσα σε **μετονομασμένο Purple Team**.
+
+10 → **6 κάρτες**, όλο το περιεχόμενο διατηρήθηκε:
+
+| # | Κάρτα | Προέλευση |
+|---|---|---|
+| 1 | Offensive Security | + τα offensive tools (Kali, Wireshark, Nessus, ZAP) από το πρώην "Tools & Platforms" |
+| 2 | **Social Engineering & Red Team** | πρώην "Purple Team" μετονομασμένο, absorbs το "Social Engineering & Physical" + Attack Simulation · MITRE · TTPs |
+| 3 | Defensive & Detection | πρώην "Defensive / Blue Team" + Detection Engineering + Grafana/Prometheus |
+| 4 | Networking | ως είχε |
+| 5 | Full Stack Dev | + Docker · Proxmox |
+| 6 | **RF, Field & Hardware** | ένωση "Wireless & RF" + "Embedded & Hardware" + "Field & Infrastructure" |
+
+Το πρώην "Tools & Platforms" διαλύθηκε και τα εργαλεία μοιράστηκαν στις Offensive/Defensive κάρτες όπου ανήκουν. Αφαιρέθηκαν αχρησιμοποίητα icon imports (Cpu, Terminal, Wrench, Zap).
+
+**Επιβεβαιώθηκε**: build OK, lint καθαρό, a11y tree = ακριβώς 6 κάρτες με σωστό περιεχόμενο. (Το social-eng *writeup* featured card στο projects παραμένει — ξεχωριστό από τις skill κάρτες.)
+
+---
+
 ## Προτάσεις για την επόμενη φορά (8 → 9+)
 
 1. **Ρόλοι στο terminal block: 9 → 4** — επιλογή των ισχυρότερων (θέλει δική σου απόφαση, είναι identity)
