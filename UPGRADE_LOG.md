@@ -203,6 +203,17 @@
 
 ---
 
+## Step 13 — JavaScript + Network Monitoring
+
+Μετά από live verification (και οι 6 κάρτες σωστές στο production):
+
+- **Full Stack Dev**: το JavaScript έγινε ρητό — `JavaScript · TypeScript` (είχε αφαιρεθεί στο curation ως υπονοούμενο από το TS, αλλά ο χρήστης έχει ολόκληρα projects σε JS: EM Spectrum, MCQ, The Eye in the Sky).
+- **Defensive & Detection**: +`Network Monitoring & Alerting` — αποφασίστηκε μαζί με τον χρήστη. Το backing είναι το **NetSentry** (το #1 project του): real-time MikroTik alerts, δηλαδή defensive monitoring που έφτιαξε ο ίδιος. Συνδέει flagship project ↔ skill.
+
+Grid παραμένει 6 κάρτες. Build/lint καθαρά, live confirmed.
+
+---
+
 ## Προτάσεις για την επόμενη φορά (8 → 9+)
 
 1. **Ρόλοι στο terminal block: 9 → 4** — επιλογή των ισχυρότερων (θέλει δική σου απόφαση, είναι identity)
