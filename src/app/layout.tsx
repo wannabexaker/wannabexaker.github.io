@@ -220,6 +220,17 @@ const jsonLd = {
       publisher: { "@id": `${SITE_URL}/#person` },
       isPartOf: { "@id": `${SITE_URL}/#website` },
     },
+    {
+      "@type": "TechArticle",
+      "@id": `${SITE_URL}/writeups/social-engineering#article`,
+      headline: "Social Engineering & Physical: Breaching the Human Perimeter",
+      description:
+        "Authorized red-team walkthrough of a physical and social engineering assessment — OSINT, pretexting, tailgating, badge cloning, BadUSB — with remediation and detection.",
+      url: `${SITE_URL}/writeups/social-engineering`,
+      author: { "@id": `${SITE_URL}/#person` },
+      publisher: { "@id": `${SITE_URL}/#person` },
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+    },
   ],
 };
 

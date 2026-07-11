@@ -161,6 +161,27 @@
 
 ---
 
+## Step 10 — CV: social engineering & physical
+
+Το CV (PDF) δεν ανέφερε καθόλου το social/physical κομμάτι. Ενημερώθηκε το HTML source, ξαναβγήκε PDF (headless Chrome), αντικαταστάθηκε το `public/cv_ioannis_dimos.pdf` (ίδιο όνομα → καμία αλλαγή κώδικα).
+
+- **Profile paragraph**: "authorized security assessments across web, wireless, **infrastructure, social engineering and physical access**".
+- **Core Skills → Security row**: +4 chips — Social engineering · pretexting, Physical access · RFID/NFC cloning, BadUSB / Rubber Ducky, OSINT.
+- Επιβεβαιώθηκε οπτικά (preview render): chips wrap σωστά, το doc παραμένει καθαρό. Temp build dir καθαρίστηκε.
+
+## Step 11 — Δεύτερο writeup: Social Engineering & Physical
+
+Δεύτερο case study, ίδια δομή/ποιότητα με το SQLi.
+
+- **Νέα σελίδα** `src/app/writeups/social-engineering/page.tsx` → `/writeups/social-engineering`. Authorized red-team engagement (signed ROE, get-out-of-jail letter — ρητό disclaimer).
+- **Δομή** (9 sections): Engagement objective → OSINT recon → Pretext → Tailgating & badge cloning → BadUSB drop → Impact → Remediation → Detection → Retest. Techniques σκόπιμα generalized (defensive playbook, όχι break-in manual)· το DuckyScript είναι harmless PoC marker.
+- **Featured card** στο projects (μοβ accent, badge-clone terminal mock) → link.
+- **SEO**: sitemap entry + TechArticle JSON-LD (σελίδα + site `@graph`).
+
+**Επιβεβαιώθηκε**: build OK, `out/writeups/social-engineering.html`, sitemap + index link, lint καθαρό, οπτικός έλεγχος (terminal aesthetic, sections, code blocks).
+
+---
+
 ## Προτάσεις για την επόμενη φορά (8 → 9+)
 
 1. **Ρόλοι στο terminal block: 9 → 4** — επιλογή των ισχυρότερων (θέλει δική σου απόφαση, είναι identity)

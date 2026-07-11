@@ -324,6 +324,58 @@ export function ProjectsSection() {
         </div>
       </Link>
 
+      {/* Featured: Social Engineering writeup */}
+      <Link
+        href="/writeups/social-engineering"
+        className="group relative mt-5 block overflow-hidden rounded-xl border border-purple-500/25 bg-gradient-to-br from-purple-500/8 via-black/70 to-secondary/7 p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-[0_0_38px_rgba(168,85,247,0.14)]"
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(168,85,247,0.10),transparent_60%)] pointer-events-none" />
+        <div className="absolute inset-0 opacity-20 pointer-events-none [background:linear-gradient(transparent_49%,rgba(255,255,255,0.08)_50%,transparent_51%)] [background-size:100%_6px]" />
+
+        <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex-1">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-purple-500/10 px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-widest text-purple-300">
+                <ShieldAlert className="size-3" />
+                Writeup
+              </span>
+              <span className="font-mono text-xs text-muted-foreground">2026 · ~11 min</span>
+            </div>
+            <h3 className="mt-2 font-mono text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-200">
+              Social Engineering &amp; Physical: Breaching the Human Perimeter
+            </h3>
+            <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              An authorized red-team walkthrough — OSINT &amp; pretexting, tailgating, RFID/NFC badge cloning, and a BadUSB drop — then the awareness, access-control &amp; detection fixes that close the gap.
+            </p>
+            <div className="mt-4 flex items-center gap-2 font-mono text-sm text-primary opacity-80 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
+              Read writeup
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block"><path d="M6 3h7v7M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
+          </div>
+
+          <div className="relative w-full max-w-sm shrink-0 overflow-hidden rounded-lg border border-purple-500/25 bg-black/80 p-3 shadow-[0_0_24px_rgba(168,85,247,0.10)]">
+            <div className="mb-2 flex items-center gap-1.5">
+              <span className="h-2 w-2 rounded-full bg-red-400/80" />
+              <span className="h-2 w-2 rounded-full bg-yellow-400/80" />
+              <span className="h-2 w-2 rounded-full bg-green-400/80" />
+              <span className="ml-2 font-mono text-[10px] uppercase tracking-wide text-purple-300/70">badge.clone</span>
+            </div>
+            <div className="h-24 overflow-hidden rounded border border-white/10 bg-black/70 p-2 font-mono text-[9px] leading-4 text-emerald-300/90">
+              <div className="text-muted-foreground">$ read prox card...</div>
+              <div className="text-purple-300">125kHz · UID 0x1A2B3C4D</div>
+              <div className="mt-1 text-muted-foreground">$ write → blank card</div>
+              <div className="mt-1 text-emerald-300">✓ clone ok · door unlocked</div>
+            </div>
+            <div className="mt-2 flex items-center justify-between font-mono text-[9px] uppercase tracking-wider text-muted-foreground">
+              <span>osint</span>
+              <span>pretext</span>
+              <span>tailgate</span>
+              <span>badge</span>
+            </div>
+          </div>
+        </div>
+      </Link>
+
       <div className="relative mt-8 grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="space-y-4">
           {projects.map((project) => (
