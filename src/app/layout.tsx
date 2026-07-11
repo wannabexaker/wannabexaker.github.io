@@ -225,7 +225,7 @@ const jsonLd = {
       "@id": `${SITE_URL}/writeups/social-engineering#article`,
       headline: "Social Engineering & Physical: Breaching the Human Perimeter",
       description:
-        "Authorized red-team walkthrough of a physical and social engineering assessment — OSINT, pretexting, tailgating, badge cloning, BadUSB — with remediation and detection.",
+        "A full-scope social engineering and physical security assessment from a defender's point of view — reconnaissance, the human layer, physical access, and the remote angle, with concrete remediation and detection.",
       url: `${SITE_URL}/writeups/social-engineering`,
       author: { "@id": `${SITE_URL}/#person` },
       publisher: { "@id": `${SITE_URL}/#person` },

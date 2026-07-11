@@ -339,13 +339,13 @@ export function ProjectsSection() {
                 <ShieldAlert className="size-3" />
                 Writeup
               </span>
-              <span className="font-mono text-xs text-muted-foreground">2026 · ~11 min</span>
+              <span className="font-mono text-xs text-muted-foreground">2026 · ~8 min</span>
             </div>
             <h3 className="mt-2 font-mono text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-200">
               Social Engineering &amp; Physical: Breaching the Human Perimeter
             </h3>
             <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              An authorized red-team walkthrough — OSINT &amp; pretexting, tailgating, RFID/NFC badge cloning, and a BadUSB drop — then the awareness, access-control &amp; detection fixes that close the gap.
+              A full-scope authorized engagement — reconnaissance, the human layer, physical access, and the remote angle — and, above all, the awareness, access-control &amp; detection fixes that close every gap.
             </p>
             <div className="mt-4 flex items-center gap-2 font-mono text-sm text-primary opacity-80 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
               Read writeup
@@ -358,19 +358,19 @@ export function ProjectsSection() {
               <span className="h-2 w-2 rounded-full bg-red-400/80" />
               <span className="h-2 w-2 rounded-full bg-yellow-400/80" />
               <span className="h-2 w-2 rounded-full bg-green-400/80" />
-              <span className="ml-2 font-mono text-[10px] uppercase tracking-wide text-purple-300/70">badge.clone</span>
+              <span className="ml-2 font-mono text-[10px] uppercase tracking-wide text-purple-300/70">human.layer</span>
             </div>
             <div className="h-24 overflow-hidden rounded border border-white/10 bg-black/70 p-2 font-mono text-[9px] leading-4 text-emerald-300/90">
-              <div className="text-muted-foreground">$ read prox card...</div>
-              <div className="text-purple-300">125kHz · UID 0x1A2B3C4D</div>
-              <div className="mt-1 text-muted-foreground">$ write → blank card</div>
-              <div className="mt-1 text-emerald-300">✓ clone ok · door unlocked</div>
+              <div className="text-muted-foreground">$ map public exposure...</div>
+              <div className="text-purple-300">● target profiled</div>
+              <div className="mt-1 text-muted-foreground">$ approach → trust earned</div>
+              <div className="mt-1 text-emerald-300">✓ objective met · no exploit used</div>
             </div>
             <div className="mt-2 flex items-center justify-between font-mono text-[9px] uppercase tracking-wider text-muted-foreground">
-              <span>osint</span>
-              <span>pretext</span>
-              <span>tailgate</span>
-              <span>badge</span>
+              <span>recon</span>
+              <span>human</span>
+              <span>physical</span>
+              <span>remote</span>
             </div>
           </div>
         </div>

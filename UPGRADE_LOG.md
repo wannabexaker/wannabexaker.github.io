@@ -214,6 +214,19 @@ Grid παραμένει 6 κάρτες. Build/lint καθαρά, live confirmed.
 
 ---
 
+## Step 14 — Εξατομίκευση social-eng writeup (covered style)
+
+Ο χρήστης έδωσε την πραγματική του μεθοδολογία αλλά **ζήτησε ρητά να ΜΗΝ εκτίθενται οι συγκεκριμένες τεχνικές του** (διακριτικό επάγγελμα). Βλ. [[feedback-security-content-general]].
+
+- Το writeup ξαναγράφτηκε: η **offensive πλευρά γενική/covered** (φάσεις & εύρος — reconnaissance, human layer, physical, wireless/remote — όχι βήματα). Ρητή δήλωση στη σελίδα ότι το tradecraft μένει ιδιωτικό ("the part I won't break down in detail").
+- Η **λεπτομέρεια μεταφέρθηκε στο defense**: αναλυτικό remediation (7 controls) + detection (5 signatures) — το χρήσιμο & shareable κομμάτι.
+- Αφαιρέθηκαν τα operational code blocks (DuckyScript, badge-clone payload). Επιβεβαιώθηκε: Rubber Ducky / BadUSB / 125kHz / prox card = 0 στο output (το "mantrap" που έμεινε είναι στο remediation, defensive).
+- Ενημερώθηκαν και το featured card blurb + terminal mock (badge.clone → human.layer, γενικό) + JSON-LD description.
+
+**Επιβεβαιώθηκε**: build OK, lint καθαρό, οπτικός έλεγχος (σωστός τόνος, defense-forward).
+
+---
+
 ## Προτάσεις για την επόμενη φορά (8 → 9+)
 
 1. **Ρόλοι στο terminal block: 9 → 4** — επιλογή των ισχυρότερων (θέλει δική σου απόφαση, είναι identity)
