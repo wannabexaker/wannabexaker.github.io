@@ -37,7 +37,7 @@ const fallbackProjects: Project[] = [
     description: "Telegram-based monitoring & control for MikroTik networks — real-time alerts, client management, guest WiFi rotation with QR codes, automated config backups. Python + Raspberry Pi.",
     url: "https://github.com/wannabexaker/NetSentry",
     year: "2026",
-    image: "/screenshots/NetSentry.jpg",
+    image: "/screenshots/NetSentry.webp",
     video: "/videos/netsentry.mp4",
   },
   {
@@ -46,7 +46,7 @@ const fallbackProjects: Project[] = [
     description: "Encrypted local notes app for Android — zero-network, privacy-first note storage.",
     url: "https://github.com/wannabexaker/SafestNotes",
     year: "2026",
-    image: "/screenshots/safestnotes.jpg",
+    image: "/screenshots/safestnotes.webp",
   },
   {
     id: 1,
@@ -54,7 +54,7 @@ const fallbackProjects: Project[] = [
     description: "Local project management desktop app with colored task tracking and workflow automation.",
     url: "https://github.com/wannabexaker/PMD",
     year: "2026",
-    image: "/screenshots/pmd.png",
+    image: "/screenshots/pmd.webp",
     objectPosition: "65% center",
   },
   {
@@ -63,15 +63,15 @@ const fallbackProjects: Project[] = [
     description: "Full-stack slot simulation platform — React player shell, admin panel, math engine validation, and Node.js API.",
     url: "https://github.com/wannabexaker/The_Eye_in_the_Sky",
     year: "2026",
-    image: "/screenshots/The_Eye_in_the_Sky.png",
+    image: "/screenshots/The_Eye_in_the_Sky.webp",
   },
 ];
 
 const repoScreenshots: Record<string, { image: string; objectPosition?: string; video?: string }> = {
-  PMD: { image: "/screenshots/pmd.png", objectPosition: "65% center" },
-  SafestNotes: { image: "/screenshots/safestnotes.jpg" },
-  "NetSentry": { image: "/screenshots/NetSentry.jpg", video: "/videos/netsentry.mp4" },
-  "The_Eye_in_the_Sky": { image: "/screenshots/The_Eye_in_the_Sky.png" },
+  PMD: { image: "/screenshots/pmd.webp", objectPosition: "65% center" },
+  SafestNotes: { image: "/screenshots/safestnotes.webp" },
+  "NetSentry": { image: "/screenshots/NetSentry.webp", video: "/videos/netsentry.mp4" },
+  "The_Eye_in_the_Sky": { image: "/screenshots/The_Eye_in_the_Sky.webp" },
 };
 
 export function ProjectsSection() {
