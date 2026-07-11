@@ -21,3 +21,16 @@
 - **`footer.tsx`**: το hardcoded έτος "2026" έγινε `new Date().getFullYear()` (υπολογίζεται στο build κάθε deploy).
 
 **Κίνδυνος:** μηδενικός — μόνο αφαιρέσεις αχρησιμοποίητων στοιχείων. Build πέρασε.
+
+---
+
+## Step 2 — SEO & Social Sharing
+
+- **Νέο OG image** (`public/og.png`, 1200×630): φτιαγμένο με το terminal aesthetic του site (grid, ASCII box, πράσινο glow). Τώρα το site δείχνει σωστό preview όταν γίνεται share σε LinkedIn / Discord / Twitter / Slack.
+- **`layout.tsx` — πλήρη metadata**: `metadataBase`, OpenGraph (title/description/url/siteName/image), Twitter card (`summary_large_image`), keywords, authors, canonical, robots directives.
+- **Τίτλος σελίδας**: "Ioannis | Security & Development" → **"Ioannis Dimos | Security & Development"** (το πλήρες όνομα είναι searchable).
+- **`<h1>` στο hero**: "Ioannis" → **"Ioannis Dimos"** — recruiters που ψάχνουν το πλήρες όνομα πλέον σε βρίσκουν.
+- **JSON-LD `Person` schema** στο `<body>`: όνομα, alias, ρόλος, τοποθεσία, GitHub/LinkedIn `sameAs`, γνωστικά πεδία — δομημένα δεδομένα για τη Google.
+- **Νέα αρχεία `src/app/robots.ts` + `src/app/sitemap.ts`**: παράγουν `/robots.txt` και `/sitemap.xml` στο static export (3 URLs: root, em-spectrum, mcq-trainer).
+
+**Επιβεβαιώθηκε στο build output**: `out/robots.txt`, `out/sitemap.xml`, `out/og.png`, OG meta tags με absolute URLs, JSON-LD παρόν.

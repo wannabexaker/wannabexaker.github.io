@@ -80,7 +80,7 @@ export function HeroBlock() {
           transition={{ duration: reducedMotion ? 0 : 0.4, delay: reducedMotion ? 0 : 0.05 }}
           className="font-mono text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
         >
-          Ioannis
+          Ioannis Dimos
         </motion.h1>
 
         <div className="min-h-8 font-mono text-xl text-secondary sm:text-2xl">
