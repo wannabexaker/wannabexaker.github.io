@@ -50,6 +50,7 @@ const cards: SkillCard[] = [
     icon: Lock,
     items: [
       "Threat Detection",
+      "Network Monitoring & Alerting",
       "SIEM · Log Analysis",
       "Incident Response",
       "IDS/IPS (Suricata)",
@@ -80,7 +81,8 @@ const cards: SkillCard[] = [
     glow: "hover:shadow-[0_0_22px_rgba(0,255,136,0.28)]",
     icon: Code2,
     items: [
-      "TypeScript · React · Next.js",
+      "JavaScript · TypeScript",
+      "React · Next.js",
       "C# / .NET",
       "Python",
       "Node.js · Nest.js",
