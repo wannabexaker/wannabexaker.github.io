@@ -9,14 +9,13 @@ const outputPath = path.resolve(portfolioRoot, "public", "mcq-trainer");
 
 const FILES = [
   "index.html",
-  "script.js",
   "style.css",
   "manifest.json",
   "sw.js",
   "sources_index.json",
   "questions_template.json",
 ];
-const DIRS = ["images"];
+const DIRS = ["images", "js"];
 
 function copyRecursive(source, destination) {
   if (!fs.existsSync(source)) {
