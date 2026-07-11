@@ -44,25 +44,18 @@ export function AboutSection() {
             <pre className="font-mono text-sm leading-7 text-[#d2e5dc]">{`$ whoami
 ioannis
 $ cat roles.txt
-> Network Engineer (MikroTik / VLAN / VPN)
-> Cybersecurity Analyst
-> Wireless Telecoms Expert
-> Full Stack Developer
-> IoT & RF Systems Engineer
-> Embedded Systems (RPi / Arduino)
-> Security Systems Integrator (CCTV / Signal Center)
-> Smart Home Energy Automation Engineer
-> Field Technician (Microwave / Fiber / PV)
+> Network Engineer      (MikroTik / VLAN / BGP)
+> Cybersecurity Analyst (Purple Team)
+> Wireless Telecoms     (Microwave / LoRa / RF)
+> Full Stack Developer  (TypeScript / C# / Python)
+$ cat also.txt
+IoT & embedded · CCTV · fiber/PON · PV & energy automation
 $ locate passion
 /usr/bin/hacking
 /usr/bin/building
 /usr/bin/deploying
 /field/antenna_alignment
-/field/spectrum_analyser
-/field/wireless_coverage_and_efficiency
-/field/cctv_commissioning
-/lab/security_validation_and_hardening
-/iot/green_automation
+/lab/security_hardening
 $ _`}</pre>
           </CardContent>
         </Card>

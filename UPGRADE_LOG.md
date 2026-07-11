@@ -125,6 +125,30 @@
 
 ---
 
+## Step 8 — Content curation (roles + skills)
+
+**Ρόλοι (about.tsx terminal block): 9 → 4.** Οι 4 headline ρόλοι (ίδιοι με το hero) με πλουσιότερα parentheticals ώστε ο καθένας να κουβαλά το βάθος του, + μια συμπαγής `also.txt` γραμμή που κρατά το εύρος (IoT/embedded, CCTV, fiber/PON, PV) χωρίς να διαλύει το focus. Το `locate passion` κόπηκε από 9 → 5 paths. Κανένα skill/εμπειρία δεν "χάθηκε" — απλά σταμάτησε να ανταγωνίζεται τους core ρόλους.
+
+**Skills: 106 → 63 items (−40%).** Κάθε κάρτα στα 5-8 δυνατότερα, strongest-first. Κόπηκαν τα generic/αδύναμα/διπλότυπα:
+
+| Κάρτα | Πριν | Μετά |
+|---|---|---|
+| Offensive Security | 9 | 7 |
+| Defensive / Blue Team | 7 | 6 |
+| Purple Team | 5 | 5 |
+| Networking | 17 | 8 |
+| Full Stack Dev | 17 | 7 |
+| Tools & Platforms | 16 | 9 |
+| Wireless & RF | 13 | 8 |
+| Embedded & Hardware | 13 | 7 |
+| Field & Infrastructure | 9 | 6 |
+
+Αφαιρέθηκαν (δείγμα): "Rust (basics)", "Firmware Basics", "Basic Electrical Installations" (τα "basics" υποβαθμίζουν), "Crunch", "VS Code", "Visual Studio", "GitHub" (trivial), "ParrotOS" (διπλότυπο του Kali), "TCP/IP", "Routing & Switching" (θεωρούνται δεδομένα για senior). Κρατήθηκαν όλα τα **διακριτικά** που σε ξεχωρίζουν (Microwave P2P 18-90GHz, LoRa, wMBUS, OSPF/BGP, CCTV, PV, GIS, Suricata).
+
+**Επιβεβαιώθηκε**: build OK, lint καθαρό, οπτικός έλεγχος terminal block (parens ευθυγραμμισμένα), content check στο build output (removed=0, differentiators παρόντα).
+
+---
+
 ## Προτάσεις για την επόμενη φορά (8 → 9+)
 
 1. **Ρόλοι στο terminal block: 9 → 4** — επιλογή των ισχυρότερων (θέλει δική σου απόφαση, είναι identity)
