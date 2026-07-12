@@ -44,14 +44,14 @@ const fallbackProjects: Project[] = [
     id: 2,
     title: "SafestNotes",
     description: "Encrypted local notes app for Android — zero-network, privacy-first note storage.",
-    url: "https://github.com/wannabexaker/SafestNotes",
+    url: "https://github.com/wannabexaker/Safest-Notes",
     year: "2026",
     image: "/screenshots/safestnotes.webp",
   },
   {
     id: 1,
-    title: "PMD — Project Manager Desktop",
-    description: "Local project management desktop app with colored task tracking and workflow automation.",
+    title: "PMD — Project Management Dashboard",
+    description: "Full-stack project management dashboard — React/Vite frontend, Spring Boot API, MongoDB, and Docker, with a Windows batch launcher for one-command local startup.",
     url: "https://github.com/wannabexaker/PMD",
     year: "2026",
     image: "/screenshots/pmd.webp",
@@ -60,7 +60,7 @@ const fallbackProjects: Project[] = [
   {
     id: 4,
     title: "The Eye in the Sky",
-    description: "Full-stack slot simulation platform — React player shell, admin panel, math engine validation, and Node.js API.",
+    description: "Slot simulation platform — TypeScript game engine, Next.js player shell, NestJS API, SQL Server, and an RTP validation harness for math-model verification.",
     url: "https://github.com/wannabexaker/The_Eye_in_the_Sky",
     year: "2026",
     image: "/screenshots/The_Eye_in_the_Sky.webp",
@@ -69,7 +69,7 @@ const fallbackProjects: Project[] = [
 
 const repoScreenshots: Record<string, { image: string; objectPosition?: string; video?: string }> = {
   PMD: { image: "/screenshots/pmd.webp", objectPosition: "65% center" },
-  SafestNotes: { image: "/screenshots/safestnotes.webp" },
+  "Safest-Notes": { image: "/screenshots/safestnotes.webp" },
   "NetSentry": { image: "/screenshots/NetSentry.webp", video: "/videos/netsentry.mp4" },
   "The_Eye_in_the_Sky": { image: "/screenshots/The_Eye_in_the_Sky.webp" },
 };
@@ -104,7 +104,7 @@ export function ProjectsSection() {
         }
 
         const repos = (await response.json()) as GitHubRepo[];
-        const PINNED = ["NetSentry", "SafestNotes", "PMD", "The_Eye_in_the_Sky"];
+        const PINNED = ["NetSentry", "Safest-Notes", "PMD", "The_Eye_in_the_Sky"];
         const byName = Object.fromEntries(repos.map((r) => [r.name, r]));
         const fallbackByName = Object.fromEntries(
           fallbackProjects.map((p) => [p.url.split("/").pop() ?? "", p])
@@ -116,7 +116,7 @@ export function ProjectsSection() {
           if (repo) {
             return {
               id: repo.id,
-              title: repo.name,
+              title: fallback?.title ?? repo.name,
               description: fallback?.description ?? repo.description ?? "Cybersecurity and software engineering project from wannabexaker.",
               url: repo.html_url,
               year: new Date(repo.created_at).getFullYear().toString(),

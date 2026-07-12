@@ -240,6 +240,19 @@ Grid παραμένει 6 κάρτες. Build/lint καθαρά, live confirmed.
 
 ---
 
+## Step 16 — Portfolio project data audit & fixes
+
+Έλεγχος όλων των portfolio projects vs. GitHub API / πραγματικά repos. Βρέθηκαν 3 προβλήματα:
+
+- **SafestNotes — σπασμένο link (404).** Το card έδειχνε στο `github.com/wannabexaker/SafestNotes` που ΔΕΝ υπάρχει· το πραγματικό repo είναι `Safest-Notes` (με παύλα). Διορθώθηκε σε: fallback URL, `PINNED` array, `repoScreenshots` key, και JSON-LD `codeRepository`.
+- **PMD — λάθος τίτλος & περιγραφή.** "Project Manager Desktop / local desktop app" → στην πραγματικότητα "Project Management **Dashboard**", full-stack (React/Vite + Spring Boot + MongoDB + Docker). Διορθώθηκε σε card + JSON-LD.
+- **The Eye in the Sky — παλιό stack.** "React player shell, Node.js API" → "TypeScript game engine, **Next.js** player shell, **NestJS** API, SQL Server, RTP validation harness". Διορθώθηκε σε card + JSON-LD.
+- **Bonus fix**: το `loadRepos` έπαιρνε `title: repo.name` (raw), οπότε η κάρτα έδειχνε `The_Eye_in_the_Sky` (underscores). Άλλαξε σε `title: fallback?.title ?? repo.name` → καθαροί τίτλοι ("The Eye in the Sky", "SafestNotes") υπερισχύουν.
+
+**Επιβεβαιώθηκε**: build OK, lint καθαρό, σπασμένο link = 0 στο output, όλα τα νέα refs παρόντα σε card + structured data.
+
+---
+
 ## Προτάσεις για την επόμενη φορά (8 → 9+)
 
 1. **Ρόλοι στο terminal block: 9 → 4** — επιλογή των ισχυρότερων (θέλει δική σου απόφαση, είναι identity)

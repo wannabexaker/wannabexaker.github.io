@@ -179,7 +179,7 @@ const jsonLd = {
             name: "SafestNotes",
             description:
               "Encrypted local notes app for Android — zero-network, privacy-first note storage.",
-            codeRepository: "https://github.com/wannabexaker/SafestNotes",
+            codeRepository: "https://github.com/wannabexaker/Safest-Notes",
             author: { "@id": `${SITE_URL}/#person` },
           },
         },
@@ -188,9 +188,9 @@ const jsonLd = {
           position: 5,
           item: {
             "@type": "SoftwareSourceCode",
-            name: "PMD — Project Manager Desktop",
+            name: "PMD — Project Management Dashboard",
             description:
-              "Local project management desktop app with colored task tracking and workflow automation.",
+              "Full-stack project management dashboard — React/Vite frontend, Spring Boot API, MongoDB, and Docker.",
             codeRepository: "https://github.com/wannabexaker/PMD",
             author: { "@id": `${SITE_URL}/#person` },
           },
@@ -202,7 +202,7 @@ const jsonLd = {
             "@type": "SoftwareSourceCode",
             name: "The Eye in the Sky",
             description:
-              "Full-stack slot simulation platform — React player shell, admin panel, math engine validation, and Node.js API.",
+              "Slot simulation platform — TypeScript game engine, Next.js player shell, NestJS API, SQL Server, and an RTP validation harness.",
             codeRepository: "https://github.com/wannabexaker/The_Eye_in_the_Sky",
             author: { "@id": `${SITE_URL}/#person` },
           },
