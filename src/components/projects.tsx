@@ -184,7 +184,7 @@ export function ProjectsSection() {
               EM Spectrum Explorer
             </h3>
             <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              Interactive electromagnetic spectrum atlas — explore RF bands, wireless technologies, modulation types, and frequency phenomena with WebGL zoom/pan canvas. Educational &amp; professional modes.
+              Interactive WebGL atlas of the whole spectrum — 40 decades (10⁻¹⁴–10²⁶ Hz) on one logarithmic axis. 130 verified phenomena, each with a scientific-confidence rating, cited sources, and a per-claim &ldquo;real science vs myth&rdquo; breakdown. Educational &amp; professional modes, domain filters, deep links.
             </p>
             <div className="mt-4 flex items-center gap-2 font-mono text-sm text-primary opacity-80 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
               Open live demo
@@ -205,7 +205,7 @@ export function ProjectsSection() {
               <div className="absolute top-0 bottom-0 w-[2px] bg-white/80 shadow-[0_0_12px_rgba(255,255,255,0.8)] left-[62%] group-hover:left-[76%] transition-all duration-500" />
             </div>
             <div className="mt-2 flex items-center justify-between font-mono text-[9px] uppercase tracking-wider text-muted-foreground">
-              <span>1 Hz</span>
+              <span>10⁻¹⁴</span>
               <span>10^6</span>
               <span>10^12</span>
               <span>10^18</span>
