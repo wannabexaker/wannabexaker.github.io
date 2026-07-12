@@ -47,7 +47,12 @@ if (!fs.existsSync(sourcePath)) {
 
 console.log(`[sync-em-spectrum] Building EM Spectrum from ${sourcePath}`);
 if (!fs.existsSync(path.join(sourcePath, "node_modules"))) {
-  run("npm", ["ci"], sourcePath);
+  // npm install (not ci): EM Spectrum pulls native optional deps (Tailwind v4
+  // oxide, lightningcss) whose transitive @emnapi versions resolve differently
+  // on the CI (Linux) host than in the Windows-authored lockfile. `npm ci` is
+  // strict and hard-fails on that drift ("Missing @emnapi/runtime from lock
+  // file"); `npm install` resolves per-platform and builds cleanly.
+  run("npm", ["install", "--no-audit", "--no-fund"], sourcePath);
 }
 run("npm", ["run", "build"], sourcePath, { NEXT_PUBLIC_BASE_PATH: "/em-spectrum" });
 
