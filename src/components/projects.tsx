@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Play, ShieldAlert, X } from "lucide-react";
+import { AppWindow, Play, ShieldAlert, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -421,11 +421,19 @@ export function ProjectsSection() {
             </Card>
           ))}
 
-          <Button asChild variant="outline" size="lg" className="h-12 w-full border-primary/30 hover:bg-primary/10">
-            <a href="https://github.com/wannabexaker" target="_blank" rel="noopener noreferrer">
-              View on GitHub
-            </a>
-          </Button>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button asChild variant="outline" size="lg" className="h-12 flex-1 border-primary/30 hover:bg-primary/10">
+              <a href="https://github.com/wannabexaker" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+              </a>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="h-12 flex-1 border-secondary/40 bg-secondary/5 hover:bg-secondary/10">
+              <a href="https://olamov.com" target="_blank" rel="noopener noreferrer">
+                <AppWindow className="size-4" />
+                Live apps · OlamovOS
+              </a>
+            </Button>
+          </div>
         </div>
 
         <div className="hidden min-h-[320px] overflow-hidden rounded-xl border border-primary/25 bg-black/70 lg:block">

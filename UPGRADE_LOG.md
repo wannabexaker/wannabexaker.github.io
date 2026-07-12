@@ -253,6 +253,18 @@ Grid παραμένει 6 κάρτες. Build/lint καθαρά, live confirmed.
 
 ---
 
+## Step 17 — OlamovOS link (χωρίς νέα cards)
+
+Ο χρήστης έχει live projects (The Eye, Radevu, Cypher, VC Hub/GTA6) σε ένα Windows-style showcase στο **olamov.com**, αλλά ΔΕΝ ήθελε άλλα project cards (το section έχει ήδη 8). Λύση: **ένα link**, όχι πολλά cards.
+
+- Προστέθηκε **δεύτερο κουμπί** δίπλα στο "View on GitHub" (flex-row, stack σε mobile): **"Live apps · OlamovOS"** με `AppWindow` icon, secondary accent, → `https://olamov.com` (target=_blank).
+- Λογική: το olamov.com είναι ήδη το showcase — μία πόρτα προς όλα τα live apps, μηδέν card bloat, self-updating (νέα apps στο olamov εμφανίζονται χωρίς να πειράζουμε το portfolio).
+- Επιβεβαιώθηκε ότι το olamov.com φορτώνει (HTTP 200) πριν το linkάρισμα.
+
+**Επιβεβαιώθηκε**: build OK, lint καθαρό, το κουμπί + href παρόντα στο output.
+
+---
+
 ## Προτάσεις για την επόμενη φορά (8 → 9+)
 
 1. **Ρόλοι στο terminal block: 9 → 4** — επιλογή των ισχυρότερων (θέλει δική σου απόφαση, είναι identity)
