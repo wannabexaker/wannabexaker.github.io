@@ -227,6 +227,19 @@ Grid παραμένει 6 κάρτες. Build/lint καθαρά, live confirmed.
 
 ---
 
+## Step 15 — Covered pass στο SQL injection writeup
+
+Ίδιο "covered μάτι" όπως στο social-eng, αλλά **μετρημένα** — το SQLi δεν έχει μυστικό tradecraft (textbook OWASP content), οπότε ο στόχος ήταν **τονική συνέπεια** με το social writeup: λιγότερο "exploitation cookbook", περισσότερο "έτσι το εντοπίζω & το κλείνω".
+
+- **Exploitation section** ξαναγράφτηκε ("Proving impact" → "What an attacker gets"): αφαιρέθηκαν τα weaponized payloads (credential-dump `UNION SELECT username, password_hash…`, blind `SUBSTRING/SLEEP/WAITFOR`). Κρατήθηκε **μόνο** το κανονικό textbook παράδειγμα (auth-bypass tautology) για τεχνική αξιοπιστία.
+- Νέο framing: "prove sensitive data is reachable, note the ceiling of impact (up to RCE), and stop — the proof matters; the dump doesn't." Δείχνει επαγγελματική συγκράτηση.
+- Το **vulnerable code + το parameterized before/after** (Node + C#) παρέμειναν — είναι το εκπαιδευτικό/αμυντικό payoff.
+- Read time 10 → 8 min.
+
+**Επιβεβαιώθηκε στο output**: weaponized payloads = 0· `admin' --` / parameterized / tautology / blind παρόντα (τεχνική κατανόηση διατηρήθηκε).
+
+---
+
 ## Προτάσεις για την επόμενη φορά (8 → 9+)
 
 1. **Ρόλοι στο terminal block: 9 → 4** — επιλογή των ισχυρότερων (θέλει δική σου απόφαση, είναι identity)

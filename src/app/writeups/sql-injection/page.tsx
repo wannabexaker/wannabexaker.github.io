@@ -117,7 +117,7 @@ export default function SqlInjectionWriteup() {
           <span className="rounded-full border border-secondary/30 px-2.5 py-0.5 text-secondary">
             Web App Security
           </span>
-          <span className="text-muted-foreground">· 2026 · ~10 min read</span>
+          <span className="text-muted-foreground">· 2026 · ~8 min read</span>
         </div>
         <h1 className="mt-4 font-mono text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           SQL Injection: <span className="text-primary">From Discovery to Remediation</span>
@@ -179,36 +179,30 @@ search?q=phone' ORDER BY 5--   → ok
 search?q=phone' ORDER BY 6--   → error   ⇒ 5 columns`}</Code>
         </Section>
 
-        <Section id="exploit" icon={Bug} step="02 · Exploitation" title="Proving impact">
+        <Section id="exploit" icon={Bug} step="02 · Exploitation" title="What an attacker gets">
           <p>
-            <strong className="text-foreground">Authentication bypass.</strong> A tautology in the
-            username field turns the <span className="font-mono text-primary">WHERE</span> clause
-            always-true and comments out the password check:
+            Once input reaches the query as structure, the classic techniques follow. In an assessment
+            I confirm each only to the depth needed to prove business impact — the goal is a clear
+            demonstration, not collecting trophies.
           </p>
-          <Code label="auth bypass">{`username:  admin' --
-password:  (anything)
-
-→ SELECT id, role FROM users WHERE username = 'admin' -- ' AND password = '...'
-→ logs in as admin, password never evaluated`}</Code>
           <p>
-            <strong className="text-foreground">UNION-based extraction.</strong> With the column count
-            known, I append a <span className="font-mono text-primary">UNION SELECT</span> to pull data
-            from other tables into the search results:
+            <strong className="text-foreground">Authentication bypass</strong> is the textbook case: a
+            tautology in the login field makes the <span className="font-mono text-primary">WHERE</span>{" "}
+            clause always-true and comments out the password check, so the app grants a session for an
+            account whose password is never evaluated.
           </p>
-          <Code label="data exfiltration">{`q = kettle' UNION SELECT username, password_hash, email, 4, 5 FROM users--
-
-→ the product list now renders every credential row in the users table`}</Code>
+          <Code label="the canonical example">{`username:  admin' --
+→ WHERE username = 'admin' -- ' AND password = '...'
+→ logs in as admin · password never checked`}</Code>
           <p>
-            <strong className="text-foreground">Blind injection.</strong> When the app returns no
-            errors and no reflected data, the database still leaks through <em>behaviour</em>. Boolean
-            conditions change the response; time delays confirm inference when even that is hidden:
+            <strong className="text-foreground">Data extraction</strong> is the next escalation. Where
+            results are reflected back, a <span className="font-mono text-primary">UNION</span> pulls
+            rows from other tables — credentials, tokens, PII — into the page. Where nothing is
+            reflected, the database still leaks one bit at a time through boolean or timing differences
+            (<em>blind</em> injection). In practice I demonstrate that sensitive data is reachable, note
+            the ceiling of impact — up to remote code execution against an over-privileged database
+            account — and stop there. The proof matters; the dump doesn&apos;t.
           </p>
-          <Code label="boolean-blind & time-blind">{`# response differs when the condition is true → read data one bit at a time
-id=7 AND SUBSTRING((SELECT role FROM users WHERE id=1),1,1)='a'
-
-# no visible difference? make the server wait to answer yes/no
-id=7 AND IF(SUBSTRING(version(),1,1)='8', SLEEP(3), 0)   -- MySQL
-id=7; IF (…) WAITFOR DELAY '0:0:3'                        -- MSSQL`}</Code>
         </Section>
 
         <Section id="impact" icon={ShieldAlert} step="03 · Impact" title="Why it matters">
