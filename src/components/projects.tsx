@@ -184,7 +184,7 @@ export function ProjectsSection() {
               EM Spectrum Explorer
             </h3>
             <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              Interactive WebGL atlas of the whole spectrum — 40 decades (10⁻¹⁴–10²⁶ Hz) on one logarithmic axis. 130 verified phenomena, each with a scientific-confidence rating, cited sources, and a per-claim &ldquo;real science vs myth&rdquo; breakdown. Educational &amp; professional modes, domain filters, deep links.
+              Interactive WebGL atlas of the whole spectrum — 40 decades (10⁻¹⁴–10²⁶ Hz) on one logarithmic axis. Educational mode: 130 phenomena, each with a scientific-confidence rating, cited sources and a per-claim &ldquo;real science vs myth&rdquo; breakdown. Professional mode: ITU sub-bands and 57 technology allocations, each citing its governing standard — 3GPP, IEEE, ETSI, ITU-R — and where it actually applies. Clickable markers with density badges, search, deep links, keyboard and screen-reader access.
             </p>
             <div className="mt-4 flex items-center gap-2 font-mono text-sm text-primary opacity-80 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
               Open live demo
