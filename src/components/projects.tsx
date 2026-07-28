@@ -206,10 +206,10 @@ export function ProjectsSection() {
             </div>
             <div className="mt-2 flex items-center justify-between font-mono text-[9px] uppercase tracking-wider text-muted-foreground">
               <span>10⁻¹⁴</span>
-              <span>10^6</span>
-              <span>10^12</span>
-              <span>10^18</span>
-              <span>10^26 Hz</span>
+              <span>10⁶</span>
+              <span>10¹²</span>
+              <span>10¹⁸</span>
+              <span>10²⁶ Hz</span>
             </div>
           </div>
         </div>
