@@ -207,6 +207,21 @@ const jsonLd = {
             author: { "@id": `${SITE_URL}/#person` },
           },
         },
+        {
+          "@type": "ListItem",
+          position: 7,
+          item: {
+            "@type": "MobileApplication",
+            name: "Fit Sentry",
+            description:
+              "A fitness tracker built as an RPG — your workouts level up your character.",
+            operatingSystem: "Android",
+            applicationCategory: "HealthApplication",
+            url: "https://play.google.com/store/apps/details?id=com.fitsentry.app",
+            installUrl: "https://play.google.com/store/apps/details?id=com.fitsentry.app",
+            author: { "@id": `${SITE_URL}/#person` },
+          },
+        },
       ],
     },
     {
