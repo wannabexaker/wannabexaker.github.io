@@ -17,7 +17,7 @@ const SITE_URL = "https://wannabexaker.github.io";
 const PAGE_PATH = "/writeups/social-engineering";
 const TITLE = "Social Engineering & Physical: Breaching the Human Perimeter";
 const DESCRIPTION =
-  "A full-scope social engineering and physical security assessment, from a defender's point of view — the shape of the work across reconnaissance, the human layer, physical access, and the remote angle, and the concrete controls that shut each one down. By Ioannis Dimos.";
+  "A full-scope social engineering and physical security assessment, from a defender's point of view - the shape of the work across reconnaissance, the human layer, physical access, and the remote angle, and the concrete controls that shut each one down. By Ioannis Dimos.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | Ioannis Dimos`,
@@ -120,7 +120,7 @@ export default function SocialEngineeringWriteup() {
           <span className="text-primary">Breaching the Human Perimeter</span>
         </h1>
         <p className="mt-4 text-base leading-7 text-muted-foreground">
-          Some of the most serious findings I deliver never touch a line of code — they come from
+          Some of the most serious findings I deliver never touch a line of code - they come from
           people, buildings, and trust. I run full-scope social engineering and physical assessments:
           the kind that answer, honestly, &ldquo;could someone talk and walk their way into your
           business?&rdquo; This is the <em>shape</em> of that work and, above all, how an organization
@@ -135,7 +135,7 @@ export default function SocialEngineeringWriteup() {
           <strong className="font-semibold text-yellow-300">Scope &amp; authorization.</strong> Every
           engagement runs under signed rules of engagement, defined objectives, named contacts, and an
           authorization letter carried on-site. Nothing here is done without that paperwork. The
-          offensive detail is kept deliberately high-level — the value of this page is the
+          offensive detail is kept deliberately high-level - the value of this page is the
           <em> defensive </em>playbook, not a manual, and specific tradecraft stays with each client.
         </div>
       </div>
@@ -143,11 +143,11 @@ export default function SocialEngineeringWriteup() {
       <div className="mt-12 space-y-12">
         <Section id="engagement" icon={ShieldCheck} step="00 · Engagement" title="What we're actually testing">
           <p>
-            A full-scope engagement treats the whole organization as the attack surface — not just its
+            A full-scope engagement treats the whole organization as the attack surface - not just its
             firewalls, but its people, its front desk, its car park, and its Wi-Fi. The client sets the
             objective (reach a restricted area, obtain a specific piece of information, get a device
             onto the network) and the boundaries; I prove whether it&apos;s possible, safely and
-            without disruption. The point is never to embarrass staff — it&apos;s to find the gap
+            without disruption. The point is never to embarrass staff - it&apos;s to find the gap
             before someone with bad intent does.
           </p>
         </Section>
@@ -155,13 +155,13 @@ export default function SocialEngineeringWriteup() {
         <Section id="recon" icon={Search} step="01 · Reconnaissance" title="The desk phase">
           <p>
             The engagement is largely won before I go anywhere near the target. Working only from
-            public information, I build a detailed picture of the organization and the people in it —
+            public information, I build a detailed picture of the organization and the people in it -
             structure, routines, relationships, and the small human details that make a later approach
             credible. It&apos;s methodical, patient work, and it&apos;s remarkable how much a
             determined outsider can assemble from what&apos;s already out in the open.
           </p>
           <p>
-            The takeaway for a defender isn&apos;t the method — it&apos;s the volume. Your organization
+            The takeaway for a defender isn&apos;t the method - it&apos;s the volume. Your organization
             and your team leak far more publicly than anyone realizes, and that exposure is the raw
             material for everything that follows.
           </p>
@@ -170,14 +170,14 @@ export default function SocialEngineeringWriteup() {
         <Section id="human" icon={Users} step="02 · The human layer" title="Reading people, earning trust">
           <p>
             This is the core of the craft and the part I won&apos;t break down in detail. In short: I
-            read how people and situations actually behave, match the approach to the person, and —
-            when the engagement calls for it — work as a small, coordinated team so the pieces fit
+            read how people and situations actually behave, match the approach to the person, and -
+            when the engagement calls for it - work as a small, coordinated team so the pieces fit
             together naturally. The goal is a moment where a helpful person, wanting to do the right
             thing, shares something they shouldn&apos;t.
           </p>
           <p>
             It takes time, patience, and a lot of preparation. Being genuinely likeable and reading a
-            room are the sharpest tools here — which is exactly why no product defends against them.
+            room are the sharpest tools here - which is exactly why no product defends against them.
             Only trained, empowered people do.
           </p>
         </Section>
@@ -186,13 +186,13 @@ export default function SocialEngineeringWriteup() {
           <p>
             Where the scope allows on-site work, I assess the building the way a real intruder would:
             how it&apos;s watched, where it&apos;s soft, and how a stranger with the right story and the
-            right props becomes invisible. Access controls — badges, doors, and the human habit of
-            holding them open — get tested end to end.
+            right props becomes invisible. Access controls - badges, doors, and the human habit of
+            holding them open - get tested end to end.
           </p>
           <p>
             Once someone is inside, the risk isn&apos;t theoretical: an unlocked workstation, an
             unattended port, or an unmonitored room is enough to leave something behind that a real
-            attacker would use for persistent access. Proving that path — cleanly, and within scope —
+            attacker would use for persistent access. Proving that path - cleanly, and within scope -
             is usually the finding that changes how a company thinks about its front door.
           </p>
         </Section>
@@ -201,7 +201,7 @@ export default function SocialEngineeringWriteup() {
           <p>
             Not every approach needs a physical presence. The wireless edge of a building leaks
             information about who&apos;s there and when, and the same rapport built during
-            reconnaissance can be delivered remotely — a message that looks exactly like a colleague, a
+            reconnaissance can be delivered remotely - a message that looks exactly like a colleague, a
             partner, or a client, arriving through the channels people already trust. Phishing and
             look-alike outreach turn one convincing message into a foothold.
           </p>
@@ -209,7 +209,7 @@ export default function SocialEngineeringWriteup() {
 
         <Section id="impact" icon={ShieldAlert} step="05 · Impact" title="Why it matters">
           <p>
-            No exploit, no malware, no alert — and yet the objective is met: a restricted area reached,
+            No exploit, no malware, no alert - and yet the objective is met: a restricted area reached,
             a critical credential obtained, a device on the internal network. Every technical control
             the organization paid for is bypassed by a held door, a friendly voice, or a well-timed
             message. That&apos;s the uncomfortable finding these assessments deliver: the human layer is
@@ -219,14 +219,14 @@ export default function SocialEngineeringWriteup() {
 
         <Section id="remediation" icon={Wrench} step="06 · Remediation" title="Closing the human perimeter">
           <p>
-            This is the part worth spending money on — and where I put the real detail, because
+            This is the part worth spending money on - and where I put the real detail, because
             defending is what actually protects a business:
           </p>
           <ul className="space-y-2 pl-1">
             {[
-              ["Security awareness, done well", "regular, realistic training so staff recognize pretexting and phishing — and a culture, backed by management, where politely challenging a stranger (“can I see your badge?”) is expected, not rude."],
+              ["Security awareness, done well", "regular, realistic training so staff recognize pretexting and phishing - and a culture, backed by management, where politely challenging a stranger (“can I see your badge?”) is expected, not rude."],
               ["Reduce public exposure", "review what the organization and key staff publish; tighten profiles, remove sensitive operational detail, and treat OSINT reduction as an ongoing hygiene task."],
-              ["Visitor & escort policy", "sign-in, photo badges, mandatory escorts, and verification of contractors against the vendor — a hi-vis vest should never be a skeleton key."],
+              ["Visitor & escort policy", "sign-in, photo badges, mandatory escorts, and verification of contractors against the vendor - a hi-vis vest should never be a skeleton key."],
               ["Physical access controls", "encrypted smartcards with mutual authentication (never unencrypted prox), anti-tailgating measures (turnstiles / mantraps), and controlled, logged access to server rooms and critical spaces."],
               ["Endpoint & port control", "block unknown USB/HID devices, auto-lock idle workstations, a clean-desk policy, and no unattended machines left unlocked."],
               ["Wi-Fi & email hardening", "WPA3-Enterprise with client isolation and rogue-AP detection; SPF/DKIM/DMARC, external-sender banners, and easy one-click phishing reporting."],
@@ -235,7 +235,7 @@ export default function SocialEngineeringWriteup() {
               <li key={k} className="flex gap-2.5">
                 <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong className="font-semibold text-foreground">{k} —</strong> {v}
+                  <strong className="font-semibold text-foreground">{k} -</strong> {v}
                 </span>
               </li>
             ))}
@@ -246,11 +246,11 @@ export default function SocialEngineeringWriteup() {
           <p>Prevention isn&apos;t perfect, so I hand the blue team what to watch for:</p>
           <ul className="space-y-2 pl-1">
             {[
-              "Badge-in without a matching badge-out, and the same credential used in two places — the signatures of tailgating and cloning.",
+              "Badge-in without a matching badge-out, and the same credential used in two places - the signatures of tailgating and cloning.",
               "USB device-insertion telemetry: a new input device appearing on a machine that already has one is a red flag worth alerting on.",
               "Reception and visitor logs reconciled against badge and CCTV events, with attention to the soft entries (deliveries, smoking areas, side doors).",
               "Rogue / look-alike Wi-Fi near the premises, and unusual client associations on the guest network.",
-              "Phishing reports trending up, and mail from look-alike domains — a reporting culture turns every employee into a sensor.",
+              "Phishing reports trending up, and mail from look-alike domains - a reporting culture turns every employee into a sensor.",
             ].map((t) => (
               <li key={t} className="flex gap-2.5">
                 <span className="mt-2 size-1.5 shrink-0 rounded-full bg-secondary" />
@@ -265,7 +265,7 @@ export default function SocialEngineeringWriteup() {
             A follow-up engagement is the real test of the fixes. After awareness training and
             physical controls, the same approach gets challenged at the door; after device control, a
             dropped implant is dead plastic; after email hardening, the look-alike message lands in
-            quarantine. When the same playbook stops working, the controls are real — not just words in
+            quarantine. When the same playbook stops working, the controls are real - not just words in
             a policy nobody reads.
           </p>
         </Section>
@@ -276,7 +276,7 @@ export default function SocialEngineeringWriteup() {
         <div className="font-mono text-[11px] uppercase tracking-widest text-primary">Takeaway</div>
         <p className="mt-2 text-[15px] leading-7 text-foreground/85">
           You can spend a fortune on firewalls and still be undone by a held door and a confident
-          smile. This work takes patience, preparation, and the nerve to see it through — but the
+          smile. This work takes patience, preparation, and the nerve to see it through - but the
           finding it delivers is priceless: the human is the perimeter. Train it, and it becomes the
           strongest layer instead of the weakest.
         </p>

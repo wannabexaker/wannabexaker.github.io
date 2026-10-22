@@ -6,7 +6,7 @@ const SITE_URL = "https://wannabexaker.github.io";
 const PAGE_PATH = "/writeups/sql-injection";
 const TITLE = "SQL Injection: From Discovery to Remediation";
 const DESCRIPTION =
-  "An authorized home-lab walkthrough of SQL injection — discovery, exploitation techniques (auth bypass, UNION, blind), impact assessment, and the parameterized-query remediation that closes it. Purple-team methodology by Ioannis Dimos.";
+  "An authorized home-lab walkthrough of SQL injection - discovery, exploitation techniques (auth bypass, UNION, blind), impact assessment, and the parameterized-query remediation that closes it. Purple-team methodology by Ioannis Dimos.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | Ioannis Dimos`,
@@ -123,7 +123,7 @@ export default function SqlInjectionWriteup() {
           SQL Injection: <span className="text-primary">From Discovery to Remediation</span>
         </h1>
         <p className="mt-4 text-base leading-7 text-muted-foreground">
-          A purple-team walkthrough of a classic SQL injection — how I find it, prove its impact,
+          A purple-team walkthrough of a classic SQL injection - how I find it, prove its impact,
           and, most importantly, how I close it. Written from an authorized home-lab exercise, not
           any client or employer environment.
         </p>
@@ -136,7 +136,7 @@ export default function SqlInjectionWriteup() {
           <strong className="font-semibold text-yellow-300">Scope &amp; authorization.</strong> Every
           command below was run against a deliberately vulnerable application I stood up on an
           isolated VM in my own lab. Testing systems you don&apos;t own or have written permission to
-          assess is illegal. This page is written for defenders — the goal is understanding the bug
+          assess is illegal. This page is written for defenders - the goal is understanding the bug
           well enough to eliminate it.
         </div>
       </div>
@@ -146,10 +146,10 @@ export default function SqlInjectionWriteup() {
           <p>
             The lab app is a small storefront: a login form and a product-search endpoint, backed by
             MySQL, with a Node/Express and a C#/.NET variant so I can show the fix in both stacks. The
-            vulnerable query concatenates user input straight into SQL — the single most common root
+            vulnerable query concatenates user input straight into SQL - the single most common root
             cause I see in real assessments:
           </p>
-          <Code label="vulnerable — string concatenation">{`// login handler (Node/Express) — DO NOT SHIP THIS
+          <Code label="vulnerable - string concatenation">{`// login handler (Node/Express) - DO NOT SHIP THIS
 const q = "SELECT id, role FROM users " +
           "WHERE username = '" + req.body.user + "' " +
           "AND password = '" + req.body.pass + "'";
@@ -163,15 +163,15 @@ if (rows.length) grantSession(rows[0]);`}</Code>
 
         <Section id="discovery" icon={Radar} step="01 · Discovery" title="Finding the injection point">
           <p>
-            I map every input that reaches the database — form fields, URL parameters, headers,
-            cookies — and probe each with a single quote. A raw database error is the first tell:
+            I map every input that reaches the database - form fields, URL parameters, headers,
+            cookies - and probe each with a single quote. A raw database error is the first tell:
           </p>
           <Code label="probe → server error (error-based signal)">{`username:  admin'
 → 500: You have an error in your SQL syntax near "'' AND password = ''"`}</Code>
           <p>
             That error confirms the input breaks out of the string literal. I fingerprint the engine
             (error dialect, version functions) and count result columns with an incremental{" "}
-            <span className="font-mono text-primary">ORDER BY</span> until it fails — that tells me how
+            <span className="font-mono text-primary">ORDER BY</span> until it fails - that tells me how
             many columns a <span className="font-mono text-primary">UNION</span> needs to match.
           </p>
           <Code label="column count">{`search?q=phone' ORDER BY 1--   → ok
@@ -182,7 +182,7 @@ search?q=phone' ORDER BY 6--   → error   ⇒ 5 columns`}</Code>
         <Section id="exploit" icon={Bug} step="02 · Exploitation" title="What an attacker gets">
           <p>
             Once input reaches the query as structure, the classic techniques follow. In an assessment
-            I confirm each only to the depth needed to prove business impact — the goal is a clear
+            I confirm each only to the depth needed to prove business impact - the goal is a clear
             demonstration, not collecting trophies.
           </p>
           <p>
@@ -197,18 +197,18 @@ search?q=phone' ORDER BY 6--   → error   ⇒ 5 columns`}</Code>
           <p>
             <strong className="text-foreground">Data extraction</strong> is the next escalation. Where
             results are reflected back, a <span className="font-mono text-primary">UNION</span> pulls
-            rows from other tables — credentials, tokens, PII — into the page. Where nothing is
+            rows from other tables - credentials, tokens, PII - into the page. Where nothing is
             reflected, the database still leaks one bit at a time through boolean or timing differences
             (<em>blind</em> injection). In practice I demonstrate that sensitive data is reachable, note
-            the ceiling of impact — up to remote code execution against an over-privileged database
-            account — and stop there. The proof matters; the dump doesn&apos;t.
+            the ceiling of impact - up to remote code execution against an over-privileged database
+            account - and stop there. The proof matters; the dump doesn&apos;t.
           </p>
         </Section>
 
         <Section id="impact" icon={ShieldAlert} step="03 · Impact" title="Why it matters">
           <p>
             One concatenated query put the entire <span className="font-mono text-primary">users</span>{" "}
-            table — including password hashes — in reach, and let an attacker log in as any account
+            table - including password hashes - in reach, and let an attacker log in as any account
             without a password. Against a database account with excess privileges, stacked queries and
             engine features (e.g. <span className="font-mono text-primary">xp_cmdshell</span> on
             misconfigured MSSQL, file writes on MySQL) can escalate from data theft to code execution.
@@ -220,31 +220,31 @@ search?q=phone' ORDER BY 6--   → error   ⇒ 5 columns`}</Code>
 
         <Section id="remediation" icon={Wrench} step="04 · Remediation" title="The fix that actually works">
           <p>
-            The fix is not escaping or blacklisting quotes — it&apos;s never letting input become code.
+            The fix is not escaping or blacklisting quotes - it&apos;s never letting input become code.
             Parameterized queries (prepared statements) send the SQL structure and the data on separate
             channels, so input is always treated as a value:
           </p>
-          <Code label="fixed — parameterized (Node)">{`const rows = await db.query(
+          <Code label="fixed - parameterized (Node)">{`const rows = await db.query(
   "SELECT id, role FROM users WHERE username = ? AND password_hash = ?",
   [req.body.user, hash(req.body.pass)]
 );`}</Code>
-          <Code label="fixed — parameterized (C# / .NET)">{`using var cmd = new SqlCommand(
+          <Code label="fixed - parameterized (C# / .NET)">{`using var cmd = new SqlCommand(
   "SELECT id, role FROM users WHERE username = @user AND password_hash = @hash", conn);
 cmd.Parameters.AddWithValue("@user", model.User);
 cmd.Parameters.AddWithValue("@hash", Hash(model.Pass));`}</Code>
           <p>Parameterization is the control that closes it. The rest is defense-in-depth:</p>
           <ul className="space-y-2 pl-1">
             {[
-              ["Least privilege", "the app's DB account gets only the rights it needs — no DROP, no xp_cmdshell, no FILE."],
-              ["Input validation", "allowlist expected shapes (numeric IDs, enum values) and reject the rest — a second layer, never the only one."],
+              ["Least privilege", "the app's DB account gets only the rights it needs - no DROP, no xp_cmdshell, no FILE."],
+              ["Input validation", "allowlist expected shapes (numeric IDs, enum values) and reject the rest - a second layer, never the only one."],
               ["Safe ORMs / stored procedures", "used correctly they parameterize by default; string-built dynamic SQL inside them re-opens the hole."],
               ["Hashing", "passwords stored with bcrypt/argon2, so an exfiltrated table isn't instantly usable."],
-              ["WAF", "catches known payloads at the edge — useful as a speed bump, not a substitute for the code fix."],
+              ["WAF", "catches known payloads at the edge - useful as a speed bump, not a substitute for the code fix."],
             ].map(([k, v]) => (
               <li key={k} className="flex gap-2.5">
                 <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
                 <span>
-                  <strong className="font-semibold text-foreground">{k} —</strong> {v}
+                  <strong className="font-semibold text-foreground">{k} -</strong> {v}
                 </span>
               </li>
             ))}
@@ -258,9 +258,9 @@ cmd.Parameters.AddWithValue("@hash", Hash(model.Pass));`}</Code>
           </p>
           <ul className="space-y-2 pl-1">
             {[
-              "Spikes in database syntax errors in application logs — probing is noisy.",
+              "Spikes in database syntax errors in application logs - probing is noisy.",
               "Requests containing UNION SELECT, ORDER BY ladders, SLEEP/WAITFOR/BENCHMARK, or comment sequences (--, #, /*).",
-              "Response-time outliers on a single parameter — the signature of time-blind injection.",
+              "Response-time outliers on a single parameter - the signature of time-blind injection.",
               "Suricata/IDS rules on the SQLi payload patterns, plus SIEM correlation of failed-login bursts against one account.",
             ].map((t) => (
               <li key={t} className="flex gap-2.5">
@@ -277,7 +277,7 @@ cmd.Parameters.AddWithValue("@hash", Hash(model.Pass));`}</Code>
             tautology now searches for a user literally named{" "}
             <span className="font-mono text-primary">admin&apos; --</span>, the{" "}
             <span className="font-mono text-primary">UNION</span> is treated as a search string, and the
-            blind conditions never execute. Same inputs, no bypass, no leak — the fix holds under the
+            blind conditions never execute. Same inputs, no bypass, no leak - the fix holds under the
             original attack.
           </p>
         </Section>
@@ -288,7 +288,7 @@ cmd.Parameters.AddWithValue("@hash", Hash(model.Pass));`}</Code>
         <div className="font-mono text-[11px] uppercase tracking-widest text-primary">Takeaway</div>
         <p className="mt-2 text-[15px] leading-7 text-foreground/85">
           The attacker&apos;s job was easy because input and code shared a channel. The defender&apos;s
-          job is to keep them apart — parameterize by default, run least-privilege, and log the
+          job is to keep them apart - parameterize by default, run least-privilege, and log the
           probes. Thinking like the attacker is what makes the fix obvious.
         </p>
       </div>

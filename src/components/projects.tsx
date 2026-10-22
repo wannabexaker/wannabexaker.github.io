@@ -34,7 +34,7 @@ const fallbackProjects: Project[] = [
   {
     id: 3,
     title: "NetSentry",
-    description: "Telegram-based monitoring & control for MikroTik networks — real-time alerts, client management, guest WiFi rotation with QR codes, automated config backups. Python + Raspberry Pi.",
+    description: "Telegram-based monitoring & control for MikroTik networks: real-time alerts, client management, guest WiFi rotation with QR codes, automated config backups. Python + Raspberry Pi.",
     url: "https://github.com/wannabexaker/NetSentry",
     year: "2026",
     image: "/screenshots/NetSentry.webp",
@@ -43,15 +43,15 @@ const fallbackProjects: Project[] = [
   {
     id: 2,
     title: "SafestNotes",
-    description: "Encrypted local notes app for Android — zero-network, privacy-first note storage.",
+    description: "Encrypted local notes app for Android: zero-network, privacy-first note storage.",
     url: "https://github.com/wannabexaker/Safest-Notes",
     year: "2026",
     image: "/screenshots/safestnotes.webp",
   },
   {
     id: 1,
-    title: "PMD — Project Management Dashboard",
-    description: "Full-stack project management dashboard — React/Vite frontend, Spring Boot API, MongoDB, and Docker, with a Windows batch launcher for one-command local startup.",
+    title: "PMD - Project Management Dashboard",
+    description: "Full-stack project management dashboard: React/Vite frontend, Spring Boot API, MongoDB, and Docker, with a Windows batch launcher for one-command local startup.",
     url: "https://github.com/wannabexaker/PMD",
     year: "2026",
     image: "/screenshots/pmd.webp",
@@ -60,7 +60,7 @@ const fallbackProjects: Project[] = [
   {
     id: 4,
     title: "The Eye in the Sky",
-    description: "Slot simulation platform — TypeScript game engine, Next.js player shell, NestJS API, SQL Server, and an RTP validation harness for math-model verification.",
+    description: "Slot simulation platform: TypeScript game engine, Next.js player shell, NestJS API, SQL Server, and an RTP validation harness for math-model verification.",
     url: "https://github.com/wannabexaker/The_Eye_in_the_Sky",
     year: "2026",
     image: "/screenshots/The_Eye_in_the_Sky.webp",
@@ -183,8 +183,8 @@ export function ProjectsSection() {
             <h3 className="mt-2 font-mono text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-200">
               EM Spectrum Explorer
             </h3>
-            <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              Interactive WebGL atlas of the whole spectrum — 40 decades (10⁻¹⁴–10²⁶ Hz) on one logarithmic axis. Educational mode: 130 phenomena with scientific-confidence ratings and cited sources, plus a Myths &amp; claims lane that plots 7 popular frequency claims — 432 Hz, Solfeggio, Rife, the consciousness &ldquo;Hz&rdquo; scale — beside what actually occupies that band, each tracing where the claim came from. Professional mode: ITU sub-bands and 57 technology allocations, each citing its governing standard — 3GPP, IEEE, ETSI, ITU-R — and where it actually applies. Clickable markers with density badges, search, deep links, keyboard and screen-reader access.
+            <p className="mt-1 max-w-xl text-sm leading-relaxed text-pretty text-muted-foreground">
+              Interactive WebGL atlas of the whole spectrum - 40 decades (10⁻¹⁴–10²⁶ Hz) on one logarithmic axis. Educational mode: 130 phenomena with scientific-confidence ratings and cited sources, plus a Myths &amp; claims lane that plots 7 popular frequency claims - 432 Hz, Solfeggio, Rife, the consciousness &ldquo;Hz&rdquo; scale - beside what actually occupies that band, each tracing where the claim came from. Professional mode: ITU sub-bands and 57 technology allocations, each citing its governing standard - 3GPP, IEEE, ETSI, ITU-R - and where it actually applies. Clickable markers with density badges, search, deep links, keyboard and screen-reader access.
             </p>
             <div className="mt-4 flex items-center gap-2 font-mono text-sm text-primary opacity-80 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
               Open live demo
@@ -236,7 +236,7 @@ export function ProjectsSection() {
             <h3 className="mt-2 font-mono text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-200">
               MCQ Trainer
             </h3>
-            <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-1 max-w-xl text-sm leading-relaxed text-pretty text-muted-foreground">
               Multiple-choice question trainer with pre-built Networking / Cybersecurity / SQL / IT sets, bring-your-own <code className="font-mono text-xs">q_*.json</code> import, exam mode, practice mode, timer, and a built-in AI prompt to generate questions from any book or text. Offline-capable PWA, also shipped as a native Android APK.
             </p>
             <div className="mt-4 flex items-center gap-2 font-mono text-sm text-primary opacity-80 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
@@ -293,8 +293,8 @@ export function ProjectsSection() {
             <h3 className="mt-2 font-mono text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-200">
               Fit Sentry
             </h3>
-            <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              A fitness tracker built as an RPG — your workouts level up your character.
+            <p className="mt-1 max-w-xl text-sm leading-relaxed text-pretty text-muted-foreground">
+              A fitness tracker built as an RPG - your workouts level up your character.
             </p>
             <div className="mt-4 flex items-center gap-2 font-mono text-sm text-primary opacity-80 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
               Google Play
@@ -354,8 +354,8 @@ export function ProjectsSection() {
             <h3 className="mt-2 font-mono text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-200">
               SQL Injection: From Discovery to Remediation
             </h3>
-            <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              A purple-team walkthrough — finding the injection, proving impact (auth bypass, UNION &amp; blind extraction), then closing it with parameterized queries, least privilege, and detection. Authorized home-lab exercise.
+            <p className="mt-1 max-w-xl text-sm leading-relaxed text-pretty text-muted-foreground">
+              A purple-team walkthrough - finding the injection, proving impact (auth bypass, UNION &amp; blind extraction), then closing it with parameterized queries, least privilege, and detection. Authorized home-lab exercise.
             </p>
             <div className="mt-4 flex items-center gap-2 font-mono text-sm text-primary opacity-80 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
               Read writeup
@@ -406,8 +406,8 @@ export function ProjectsSection() {
             <h3 className="mt-2 font-mono text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-200">
               Social Engineering &amp; Physical: Breaching the Human Perimeter
             </h3>
-            <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              A full-scope authorized engagement — reconnaissance, the human layer, physical access, and the remote angle — and, above all, the awareness, access-control &amp; detection fixes that close every gap.
+            <p className="mt-1 max-w-xl text-sm leading-relaxed text-pretty text-muted-foreground">
+              A full-scope authorized engagement - reconnaissance, the human layer, physical access, and the remote angle - and, above all, the awareness, access-control &amp; detection fixes that close every gap.
             </p>
             <div className="mt-4 flex items-center gap-2 font-mono text-sm text-primary opacity-80 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
               Read writeup
@@ -466,7 +466,7 @@ export function ProjectsSection() {
                     {project.year}
                   </span>
                 </div>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">{project.description}</p>
+                <p className="mt-3 text-sm leading-7 text-pretty text-muted-foreground">{project.description}</p>
               </Link>
               {project.video && (
                 <div className="px-5 pb-4">
@@ -542,7 +542,7 @@ export function ProjectsSection() {
             >
               <div className="mb-2 flex items-center justify-between">
                 <span className="font-mono text-sm text-primary">
-                  &gt; {videoProject.title} — demo_
+                  &gt; {videoProject.title} - demo_
                 </span>
                 <button
                   type="button"

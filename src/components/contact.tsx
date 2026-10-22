@@ -19,7 +19,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="mx-auto w-full max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
       <h2 className="terminal-title text-2xl font-semibold tracking-tight sm:text-3xl">&gt; contact_</h2>
-      <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
+      <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-balance text-muted-foreground sm:text-lg">
         Open to full-stack development roles, network &amp; telecom projects, IoT deployments and
         interesting problems: remote or on-site in Greece.
       </p>
