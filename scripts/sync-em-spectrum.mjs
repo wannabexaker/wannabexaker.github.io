@@ -46,7 +46,12 @@ if (!fs.existsSync(sourcePath)) {
 }
 
 console.log(`[sync-em-spectrum] Building EM Spectrum from ${sourcePath}`);
-if (!fs.existsSync(path.join(sourcePath, "node_modules"))) {
+// Tested against next/package.json, not the node_modules directory. A partial
+// install leaves that directory in place with hundreds of packages but without
+// the one file Turbopack resolves, so the directory test passed, the repair was
+// skipped, and the build ran against a tree it could not fix from here. This is
+// the exact file whose absence produced that failure.
+if (!fs.existsSync(path.join(sourcePath, "node_modules", "next", "package.json"))) {
   // npm install (not ci): EM Spectrum pulls native optional deps (Tailwind v4
   // oxide, lightningcss) whose transitive @emnapi versions resolve differently
   // on the CI (Linux) host than in the Windows-authored lockfile. `npm ci` is
