@@ -42,6 +42,14 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+          <a
+            href="https://olamov.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-sm text-purple-300 transition-colors duration-200 hover:text-purple-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/80 rounded"
+          >
+            OlamovOS ↗
+          </a>
         </nav>
 
         <div className="md:hidden">
@@ -86,6 +94,15 @@ export function Navbar() {
                     {link.label}
                   </SheetClose>
                 ))}
+                <a
+                  href="https://olamov.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex cursor-pointer items-center gap-3 rounded-lg border border-purple-300/50 bg-purple-50 px-4 py-3.5 text-left font-mono text-sm text-purple-700 transition-all duration-200 hover:border-purple-400 hover:bg-purple-100"
+                >
+                  <span className="font-mono text-xs text-purple-400">↗</span>
+                  OlamovOS
+                </a>
               </div>
             </SheetContent>
           </Sheet>

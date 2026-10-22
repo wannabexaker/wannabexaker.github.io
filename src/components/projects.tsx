@@ -162,12 +162,72 @@ export function ProjectsSection() {
         &gt; selected_projects_
       </h2>
 
+      {/* Featured: OlamovOS */}
+      <a
+        href="https://olamov.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative mt-8 block overflow-hidden rounded-xl border border-purple-500/35 bg-gradient-to-br from-purple-500/10 via-black/70 to-fuchsia-500/8 p-6 transition-all duration-300 hover:border-purple-500/70 hover:shadow-[0_0_42px_rgba(168,85,247,0.22)]"
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(168,85,247,0.14),transparent_60%)] pointer-events-none" />
+        <div className="absolute inset-0 opacity-20 pointer-events-none [background:linear-gradient(transparent_49%,rgba(255,255,255,0.08)_50%,transparent_51%)] [background-size:100%_6px]" />
+
+        <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex-1">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-purple-500/15 px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-widest text-purple-300">
+                <AppWindow className="size-3" />
+                Live apps
+              </span>
+              <span className="font-mono text-xs text-muted-foreground">olamov.com</span>
+            </div>
+            <h3 className="mt-2 font-mono text-lg font-bold text-foreground group-hover:text-purple-300 transition-colors duration-200">
+              OlamovOS: my live app desktop
+            </h3>
+            <p className="mt-1 max-w-xl text-sm leading-relaxed text-pretty text-muted-foreground">
+              A browser-based desktop that gathers my live apps and projects in one place. Open the My Projects folder and explore them as if they were running on a small operating system.
+            </p>
+            <div className="mt-4 flex items-center gap-2 font-mono text-sm text-purple-300 opacity-80 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1">
+              Enter OlamovOS
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="inline-block"><path d="M6 3h7v7M13 3L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
+          </div>
+
+          <div className="relative w-full max-w-sm shrink-0 overflow-hidden rounded-lg border border-purple-500/30 bg-black/80 p-3 shadow-[0_0_28px_rgba(168,85,247,0.14)]">
+            <div className="mb-2 flex items-center gap-1.5">
+              <span className="h-2 w-2 rounded-full bg-red-400/80" />
+              <span className="h-2 w-2 rounded-full bg-yellow-400/80" />
+              <span className="h-2 w-2 rounded-full bg-green-400/80" />
+              <span className="ml-2 font-mono text-[10px] uppercase tracking-wide text-purple-300/70">olamov_os</span>
+            </div>
+            <div className="relative h-24 overflow-hidden rounded border border-white/10 p-2 font-mono text-[9px] text-purple-100/90 [background:radial-gradient(ellipse_at_75%_15%,rgba(168,85,247,0.40),transparent_55%),linear-gradient(160deg,#17061f,#0c0417)]">
+              <div className="text-purple-200/80">&gt; my_projects/</div>
+              <div className="mt-1 flex flex-wrap gap-1">
+                <span className="rounded border border-purple-400/30 bg-purple-500/15 px-1 text-purple-100">The Eye</span>
+                <span className="rounded border border-purple-400/30 bg-purple-500/15 px-1 text-purple-100">Radevu</span>
+                <span className="rounded border border-purple-400/30 bg-purple-500/15 px-1 text-purple-100">Cypher</span>
+                <span className="rounded border border-purple-400/30 bg-purple-500/15 px-1 text-purple-100">VC Hub</span>
+              </div>
+              <div className="absolute bottom-1 left-2 right-2 flex items-center justify-between text-purple-300/60">
+                <span>&#9635; start</span>
+                <span>olamov_os</span>
+              </div>
+            </div>
+            <div className="mt-2 flex items-center justify-between font-mono text-[9px] uppercase tracking-wider text-muted-foreground">
+              <span>desktop</span>
+              <span>apps</span>
+              <span>live</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
       {/* Featured: EM Spectrum */}
       <a
         href="/em-spectrum/"
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative mt-8 block overflow-hidden rounded-xl border border-primary/30 bg-gradient-to-br from-primary/7 via-black/70 to-secondary/8 p-6 transition-all duration-300 hover:border-primary/70 hover:shadow-[0_0_38px_rgba(0,255,136,0.16)]"
+        className="group relative mt-5 block overflow-hidden rounded-xl border border-primary/30 bg-gradient-to-br from-primary/7 via-black/70 to-secondary/8 p-6 transition-all duration-300 hover:border-primary/70 hover:shadow-[0_0_38px_rgba(0,255,136,0.16)]"
       >
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,255,136,0.08),transparent_60%)] pointer-events-none" />
         <div className="absolute inset-0 opacity-20 pointer-events-none [background:linear-gradient(transparent_49%,rgba(255,255,255,0.08)_50%,transparent_51%)] [background-size:100%_6px]" />
@@ -489,9 +549,9 @@ export function ProjectsSection() {
                 View on GitHub
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="h-12 flex-1 border-secondary/40 bg-secondary/5 hover:bg-secondary/10">
+            <Button asChild variant="outline" size="lg" className="h-12 flex-1 border-purple-500/45 bg-purple-500/5 text-purple-200 hover:bg-purple-500/15 hover:text-purple-100">
               <a href="https://olamov.com" target="_blank" rel="noopener noreferrer">
-                <AppWindow className="size-4" />
+                <AppWindow className="size-4 text-purple-400" />
                 Live apps · OlamovOS
               </a>
             </Button>
