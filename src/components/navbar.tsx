@@ -21,6 +21,30 @@ const navLinks = [
   { href: "#contact", label: "Contact" },
 ];
 
+function OlamovPlanet({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <circle cx="12" cy="11" r="5.4" fill="url(#olamov-planet-grad)" />
+      <ellipse
+        cx="12"
+        cy="11"
+        rx="10"
+        ry="3.4"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        transform="rotate(-20 12 11)"
+      />
+      <defs>
+        <radialGradient id="olamov-planet-grad" cx="38%" cy="34%" r="75%">
+          <stop offset="0%" stopColor="#d8b4fe" />
+          <stop offset="55%" stopColor="#a855f7" />
+          <stop offset="100%" stopColor="#7c3aed" />
+        </radialGradient>
+      </defs>
+    </svg>
+  );
+}
+
 export function Navbar() {
   return (
     <header className="fixed top-4 left-4 right-4 z-50 mx-auto w-[calc(100%-2rem)] max-w-7xl rounded-xl border border-primary/20 bg-black/60 backdrop-blur-md">
@@ -46,9 +70,11 @@ export function Navbar() {
             href="https://olamov.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-sm text-purple-300 transition-colors duration-200 hover:text-purple-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/80 rounded"
+            aria-label="OlamovOS"
+            title="OlamovOS"
+            className="inline-flex items-center text-purple-300 transition-colors duration-200 hover:text-purple-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/80 rounded-full"
           >
-            OlamovOS ↗
+            <OlamovPlanet className="size-[18px]" />
           </a>
         </nav>
 
@@ -100,7 +126,7 @@ export function Navbar() {
                   rel="noopener noreferrer"
                   className="group flex cursor-pointer items-center gap-3 rounded-lg border border-purple-300/50 bg-purple-50 px-4 py-3.5 text-left font-mono text-sm text-purple-700 transition-all duration-200 hover:border-purple-400 hover:bg-purple-100"
                 >
-                  <span className="font-mono text-xs text-purple-400">↗</span>
+                  <OlamovPlanet className="size-4 text-purple-500" />
                   OlamovOS
                 </a>
               </div>
