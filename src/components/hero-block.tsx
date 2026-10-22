@@ -8,10 +8,10 @@ import { ChevronDown, Code2, Shield, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const roles = [
-  "Network Engineer",
-  "Cybersecurity Analyst",
-  "Wireless Telecoms Expert",
-  "Full Stack Developer",
+  "Full-Stack Developer",
+  "Network & Telecom Engineer",
+  "IoT & Wireless Systems",
+  "Security-First Mindset",
 ];
 
 const socialLinks = [
@@ -89,8 +89,9 @@ export function HeroBlock() {
         </div>
 
         <p className="mx-auto max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
-          Network engineer, cybersecurity analyst &amp; full-stack developer.
-          I design, build, and secure it all — also I break things to understand them, then build them better.
+          Full-stack developer (C#&nbsp;/&nbsp;.NET · TypeScript) with a deep hands-on background in
+          networks, telecommunications, wireless and IoT. I design, build and secure systems end to
+          end: from applications to routers, radio links and devices.
         </p>
 
         <motion.div

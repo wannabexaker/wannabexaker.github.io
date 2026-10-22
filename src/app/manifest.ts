@@ -4,10 +4,10 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Ioannis Dimos — Security & Development",
+    name: "Ioannis Dimos - Full-Stack Developer",
     short_name: "wannabexaker",
     description:
-      "Portfolio of Ioannis Dimos (wannabexaker) — cybersecurity analyst, network engineer, and full-stack developer.",
+      "Portfolio of Ioannis Dimos (wannabexaker) - full-stack developer with a background in networks, telecommunications, wireless and IoT.",
     start_url: "/",
     display: "browser",
     background_color: "#060a08",

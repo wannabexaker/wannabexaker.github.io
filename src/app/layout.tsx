@@ -13,9 +13,9 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 const SITE_URL = "https://wannabexaker.github.io";
-const SITE_TITLE = "Ioannis Dimos | Security & Development";
+const SITE_TITLE = "Ioannis Dimos | Full-Stack Developer";
 const SITE_DESCRIPTION =
-  "Portfolio of Ioannis Dimos (wannabexaker) — cybersecurity analyst, network engineer, and full-stack developer in Athens, Greece. MikroTik infrastructure, RF & wireless, IoT, and security tooling.";
+  "Portfolio of Ioannis Dimos (wannabexaker) - full-stack developer (C# / .NET, TypeScript) in Athens, Greece, with a hands-on background in networks, telecommunications, wireless and IoT, and a security-first approach.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -24,14 +24,16 @@ export const metadata: Metadata = {
   keywords: [
     "Ioannis Dimos",
     "wannabexaker",
-    "cybersecurity analyst",
-    "network engineer",
     "full-stack developer",
+    "C# developer",
+    ".NET developer",
+    "network engineer",
+    "telecommunications",
     "MikroTik",
     "RouterOS",
     "wireless",
-    "RF engineering",
     "IoT",
+    "application security",
     "Greece",
   ],
   authors: [{ name: "Ioannis Dimos", url: SITE_URL }],
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: SITE_URL,
-    siteName: "Ioannis Dimos — wannabexaker",
+    siteName: "Ioannis Dimos - wannabexaker",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     locale: "en_US",
@@ -49,7 +51,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Ioannis Dimos — Cybersecurity Analyst, Network Engineer, Full-Stack Developer",
+        alt: "Ioannis Dimos - Full-Stack Developer, Network & Telecom Engineer",
       },
     ],
   },
@@ -90,7 +92,7 @@ const jsonLd = {
       alternateName: "wannabexaker",
       url: SITE_URL,
       image: `${SITE_URL}/og.png`,
-      jobTitle: "Cybersecurity Analyst & Network Engineer",
+      jobTitle: "Full-Stack Developer",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Athens",
@@ -101,19 +103,22 @@ const jsonLd = {
         "https://www.linkedin.com/in/jiannisnw/",
       ],
       knowsAbout: [
-        "Cybersecurity",
+        "Full-Stack Development",
+        "C# / .NET",
+        "TypeScript",
         "Network Engineering",
         "MikroTik RouterOS",
+        "Telecommunications",
         "RF & Wireless Systems",
         "IoT",
-        "Full-Stack Development",
+        "Application Security",
       ],
     },
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
-      name: "Ioannis Dimos — wannabexaker",
+      name: "Ioannis Dimos - wannabexaker",
       description: SITE_DESCRIPTION,
       publisher: { "@id": `${SITE_URL}/#person` },
       inLanguage: "en",
@@ -139,7 +144,7 @@ const jsonLd = {
             "@type": "SoftwareSourceCode",
             name: "NetSentry",
             description:
-              "Telegram-based monitoring & control for MikroTik networks — real-time alerts, guest WiFi rotation with QR codes, automated config backups.",
+              "Telegram-based monitoring & control for MikroTik networks - real-time alerts, guest WiFi rotation with QR codes, automated config backups.",
             codeRepository: "https://github.com/wannabexaker/NetSentry",
             programmingLanguage: "Python",
             author: { "@id": `${SITE_URL}/#person` },
@@ -152,7 +157,7 @@ const jsonLd = {
             "@type": "WebApplication",
             name: "EM Spectrum Explorer",
             description:
-              "Interactive electromagnetic spectrum atlas with WebGL zoom/pan — RF bands, wireless technologies, and modulation types.",
+              "Interactive electromagnetic spectrum atlas with WebGL zoom/pan - RF bands, wireless technologies, and modulation types.",
             url: `${SITE_URL}/em-spectrum/`,
             applicationCategory: "EducationalApplication",
             author: { "@id": `${SITE_URL}/#person` },
@@ -165,7 +170,7 @@ const jsonLd = {
             "@type": "WebApplication",
             name: "MCQ Trainer",
             description:
-              "Multiple-choice exam trainer with Networking / Cybersecurity / SQL / IT question sets, exam and practice modes — offline PWA and Android APK.",
+              "Multiple-choice exam trainer with Networking / Cybersecurity / SQL / IT question sets, exam and practice modes - offline PWA and Android APK.",
             url: `${SITE_URL}/mcq-trainer/`,
             applicationCategory: "EducationalApplication",
             author: { "@id": `${SITE_URL}/#person` },
@@ -178,7 +183,7 @@ const jsonLd = {
             "@type": "SoftwareSourceCode",
             name: "SafestNotes",
             description:
-              "Encrypted local notes app for Android — zero-network, privacy-first note storage.",
+              "Encrypted local notes app for Android - zero-network, privacy-first note storage.",
             codeRepository: "https://github.com/wannabexaker/Safest-Notes",
             author: { "@id": `${SITE_URL}/#person` },
           },
@@ -188,9 +193,9 @@ const jsonLd = {
           position: 5,
           item: {
             "@type": "SoftwareSourceCode",
-            name: "PMD — Project Management Dashboard",
+            name: "PMD - Project Management Dashboard",
             description:
-              "Full-stack project management dashboard — React/Vite frontend, Spring Boot API, MongoDB, and Docker.",
+              "Full-stack project management dashboard - React/Vite frontend, Spring Boot API, MongoDB, and Docker.",
             codeRepository: "https://github.com/wannabexaker/PMD",
             author: { "@id": `${SITE_URL}/#person` },
           },
@@ -202,7 +207,7 @@ const jsonLd = {
             "@type": "SoftwareSourceCode",
             name: "The Eye in the Sky",
             description:
-              "Slot simulation platform — TypeScript game engine, Next.js player shell, NestJS API, SQL Server, and an RTP validation harness.",
+              "Slot simulation platform - TypeScript game engine, Next.js player shell, NestJS API, SQL Server, and an RTP validation harness.",
             codeRepository: "https://github.com/wannabexaker/The_Eye_in_the_Sky",
             author: { "@id": `${SITE_URL}/#person` },
           },
@@ -214,7 +219,7 @@ const jsonLd = {
             "@type": "MobileApplication",
             name: "Fit Sentry",
             description:
-              "A fitness tracker built as an RPG — your workouts level up your character.",
+              "A fitness tracker built as an RPG - your workouts level up your character.",
             operatingSystem: "Android",
             applicationCategory: "HealthApplication",
             url: "https://play.google.com/store/apps/details?id=com.fitsentry.app",
@@ -229,7 +234,7 @@ const jsonLd = {
       "@id": `${SITE_URL}/writeups/sql-injection#article`,
       headline: "SQL Injection: From Discovery to Remediation",
       description:
-        "Authorized home-lab walkthrough of SQL injection — discovery, exploitation, impact, and parameterized-query remediation.",
+        "Authorized home-lab walkthrough of SQL injection - discovery, exploitation, impact, and parameterized-query remediation.",
       url: `${SITE_URL}/writeups/sql-injection`,
       author: { "@id": `${SITE_URL}/#person` },
       publisher: { "@id": `${SITE_URL}/#person` },
@@ -240,7 +245,7 @@ const jsonLd = {
       "@id": `${SITE_URL}/writeups/social-engineering#article`,
       headline: "Social Engineering & Physical: Breaching the Human Perimeter",
       description:
-        "A full-scope social engineering and physical security assessment from a defender's point of view — reconnaissance, the human layer, physical access, and the remote angle, with concrete remediation and detection.",
+        "A full-scope social engineering and physical security assessment from a defender's point of view - reconnaissance, the human layer, physical access, and the remote angle, with concrete remediation and detection.",
       url: `${SITE_URL}/writeups/social-engineering`,
       author: { "@id": `${SITE_URL}/#person` },
       publisher: { "@id": `${SITE_URL}/#person` },

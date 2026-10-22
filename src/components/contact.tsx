@@ -20,11 +20,11 @@ export function ContactSection() {
     <section id="contact" className="mx-auto w-full max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
       <h2 className="terminal-title text-2xl font-semibold tracking-tight sm:text-3xl">&gt; contact_</h2>
       <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">
-        Open to security collaborations, network infrastructure projects, IoT deployments,
-        freelance dev work, and interesting problems — remote or on-site in Greece.
+        Open to full-stack development roles, network &amp; telecom projects, IoT deployments and
+        interesting problems: remote or on-site in Greece.
       </p>
 
-      <div className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-3">
         <a
           href="https://github.com/wannabexaker"
           target="_blank"
@@ -73,11 +73,29 @@ export function ContactSection() {
           </Card>
         </button>
 
-        <a href="/cv_ioannis_dimos.pdf" download="cv_ioannis_dimos.pdf" className="group">
+      </div>
+
+      <div className="mx-auto mt-4 grid max-w-3xl gap-4 sm:grid-cols-2">
+        <a href="/Ioannis_Dimos_CV_FullStack.pdf" download className="group">
           <Card className="h-full border-border/80 bg-card/80 transition-colors duration-200 group-hover:border-primary/45 group-hover:bg-primary/5">
-            <CardContent className="flex h-full min-h-28 items-center justify-center gap-3 p-6 font-mono text-foreground">
-              <FileDown className="size-5 text-primary" />
-              Resume
+            <CardContent className="flex h-full min-h-20 items-center justify-center gap-3 p-5 font-mono text-foreground">
+              <FileDown className="size-5 shrink-0 text-primary" />
+              <div className="text-left leading-tight">
+                <div>CV · Full-Stack Dev</div>
+                <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground/60">C# / .NET · TypeScript</div>
+              </div>
+            </CardContent>
+          </Card>
+        </a>
+
+        <a href="/Ioannis_Dimos_CV_Network.pdf" download className="group">
+          <Card className="h-full border-border/80 bg-card/80 transition-colors duration-200 group-hover:border-secondary/45 group-hover:bg-secondary/5">
+            <CardContent className="flex h-full min-h-20 items-center justify-center gap-3 p-5 font-mono text-foreground">
+              <FileDown className="size-5 shrink-0 text-secondary" />
+              <div className="text-left leading-tight">
+                <div>CV · Network &amp; Telecom</div>
+                <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground/60">RF · Fiber · IoT</div>
+              </div>
             </CardContent>
           </Card>
         </a>

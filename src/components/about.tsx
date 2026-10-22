@@ -9,27 +9,29 @@ export function AboutSection() {
         <Card className="border-primary/20 bg-card/80">
           <CardContent className="space-y-4 p-6 sm:p-8">
             <p className="max-w-prose text-base leading-8 text-foreground/90 sm:text-lg">
-              I&apos;m a network engineer and cybersecurity analyst based in Greece, with a purple team
-              mindset — I think like an attacker, defend like an engineer.
+              I&apos;m a full-stack developer, currently building C#&nbsp;/&nbsp;.NET and SQL Server
+              features at PeopleCert. That&apos;s my focus today, and it sits on top of two decades of
+              hands-on work across networks, telecommunications, wireless and IoT.
             </p>
             <p className="max-w-prose text-base leading-8 text-foreground/90 sm:text-lg">
-              My core is networking: MikroTik infrastructure, complex VLANs, VPN tunnels, BGP,
-              OSPF, QoS, and full network automation. On the security side I run authorized
-              assessments — web app, wireless, infrastructure, plus social engineering and physical
-              access (badge cloning, BadUSB, pretexting) — then stay to harden what I found.
+              I ship full-stack applications with C#&nbsp;/&nbsp;.NET, TypeScript, React and Next.js,
+              backed by SQL Server and PostgreSQL and containerised with Docker. AI-assisted
+              development is part of how I work every day: I script and automate with it, lean on a
+              planning- and research-first method, and enjoy helping other developers use it well.
+              I&apos;m methodical and well organised, work equally well solo or in a team, and bring a
+              positive attitude.
             </p>
             <p className="max-w-prose text-base leading-8 text-foreground/90 sm:text-lg">
-              In the field I work across the full RF spectrum (12.5KHz–90GHz): LoRa, wMBUS,
-              microwave P2P links, WiFi deployments, antenna alignment, and spectrum analysis.
-              I also handle fiber splicing, PON activation, CCTV integration, smart home energy
-              automation, and photovoltaic installations.
+              Underneath sits networking and telecommunications: MikroTik infrastructure, complex
+              VLANs, VPN tunnels, BGP/OSPF and network automation, plus years of field and RF work,
+              from microwave P2P links and LoRa/wMBUS metering to WiFi, antenna alignment and fiber /
+              PON.
             </p>
             <p className="max-w-prose text-base leading-8 text-foreground/90 sm:text-lg">
-              On the dev side I build full-stack applications with React, Next.js, C#, and Python
-              — backed by Docker, MSSQL, and PostgreSQL — and integrate AI where it genuinely
-              adds value. Down at the hardware level I design and build complete systems: custom
-              workstations, watercooling, servers, embedded devices with RPi and Arduino, and IoT
-              deployments planned with GIS from site survey to activation.
+              Security runs through all of it, but as a mindset and a skill rather than a job title: I
+              design, test and harden what I build, from the application layer down to routers,
+              wireless links and devices. It&apos;s an area I genuinely love and keep pushing to grow
+              in.
             </p>
             <p className="max-w-prose text-base font-medium leading-8 text-primary/90 sm:text-lg">
               If it runs on electrons, I&apos;ve probably worked on it.
@@ -45,18 +47,18 @@ export function AboutSection() {
             <pre className="font-mono text-sm leading-7 text-[#d2e5dc]">{`$ whoami
 ioannis
 $ cat roles.txt
-> Network Engineer      (MikroTik / VLAN / BGP)
-> Cybersecurity Analyst (Purple Team)
-> Wireless Telecoms     (Microwave / LoRa / RF)
-> Full Stack Developer  (TypeScript / C# / Python)
-$ cat also.txt
-IoT & embedded · CCTV · fiber/PON · PV & energy automation
-$ locate passion
-/usr/bin/hacking
+> Full-Stack Developer   (C# / .NET · TypeScript · SQL)
+> Network & Telecom Eng. (MikroTik / VLAN / BGP)
+> Wireless & RF          (Microwave / LoRa / WiFi)
+> IoT & Embedded         (RPi / Arduino / ESP32)
+$ cat approach.txt
+security-first mindset: design, build, test, harden
+ai-assisted: daily since 2022, scripting & automation
+$ locate focus
 /usr/bin/building
-/usr/bin/deploying
-/field/antenna_alignment
-/lab/security_hardening
+/usr/bin/shipping
+/field/networks_and_rf
+/lab/secure_by_design
 $ _`}</pre>
           </CardContent>
         </Card>
